@@ -1,0 +1,246 @@
+@charset "UTF-8";
+@use '../utility/variable' as *;
+
+/*-----------------------------------------
+共通
+-----------------------------------------*/
+/*
+サイズ用関数
+$pixelsVw:フォントサイズ
+$baseWidth:ベースとなる画面横幅
+*/
+
+@function vw($pixelsVw, $baseWidth) {
+  @return calc($pixelsVw / $baseWidth * 100vw);
+}
+/*
+SAMPLE
+font-size: vw(30,375);
+*/
+
+
+/*-----------------------------------------
+lunch
+-----------------------------------------*/
+.lunch {
+  padding-top: rem(143);
+  background-color: $white;
+  @include mq {
+    padding-top: rem(100);
+  }
+}
+
+.lunch-summary {
+  background-color: $gray2;
+  color: $black;
+  padding-block: rem(143) rem(133);
+  @include mq {
+    padding-block: rem(60);
+  }
+}
+
+.lunch-menu {
+  padding-block: rem(105) rem(113);
+  @include mq {
+    padding-block: rem(60);
+  }
+}
+
+.lunch-menu__inner {
+  max-width: rem(1150);
+  margin-inline: auto;
+  padding-inline: $padding-pc;
+  @media (max-width: 840px) {
+    max-width: rem(600);
+    padding-inline: $padding-sp;
+  }
+}
+
+.lunch-menu__title {
+  font-size: rem(21);
+  letter-spacing: .35em;
+}
+
+.lunch-menu__flex {
+  margin-top: rem(46);
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 840px) {
+    flex-direction: column;
+  }
+}
+
+.lunch-menu__lists {
+  width: rem(530);
+  padding-right: rem(30);
+  @media (max-width: 840px) {
+    padding-right: 0;
+    width: 100%;
+  }
+}
+
+.lunch-menu__img {
+  width: rem(450);
+  @media (min-width: 841px) and (max-width: 1080px) {
+    width: vw(450, 1080);
+    overflow: hidden;
+  }
+  @media (max-width: 840px) {
+    margin-top: rem(40);
+    width: 100%;
+  }
+}
+
+.lunch-menu__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lunch-menu__lists {
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(18);
+}
+
+.lunch-menu__list {
+  display: flex;
+  font-size: rem(14);
+  padding-block: rem(11) rem(10);
+  border-bottom: rem(1) solid #000;
+}
+
+.lunch-menu__list:first-child {
+  padding-top: 0;
+}
+
+.lunch-menu__list dt {
+  width: rem(130);
+  letter-spacing: .24em;
+  @media (min-width: 768px) and (max-width: 1174px) {
+    width: rem(100);
+  }
+  @include mq {
+    width: rem(90);
+    line-height: 1.4;
+  }
+}
+
+.lunch-menu__list dd {
+  flex: 1;
+  letter-spacing: .22em;
+  @include mq {
+    line-height: 1.4;
+  }
+  span {
+    font-size: rem(12);
+  }
+}
+
+.lunch-menu__note {
+  margin-top: rem(13);
+  font-size: rem(12);
+  letter-spacing: .22em;
+  text-align: right;
+  @media (max-width: 1140px) {
+    letter-spacing: .02em;
+  }
+  @include mq {
+    text-align: left;
+    line-height: 1.4;
+  }
+}
+
+.lunch-menu__link {
+  margin-top: rem(50);
+  display: flex;
+  border: 1px solid #000;
+  @media (max-width: 840px) {
+    flex-direction: column;
+  }
+}
+
+.lunch-link__link-text {
+  font-size: rem(17);
+  letter-spacing: .18em;
+  line-height: 2.2647;
+  padding: rem(5) rem(10);
+  flex: 1;
+  text-align: center;
+  @media (min-width: 841px) and (max-width: 1140px) {
+    letter-spacing: .04em;
+    font-size: rem(15);
+  }
+  @media (max-width: 840px) {
+    font-size: rem(15);
+    letter-spacing: .02em;
+    line-height: 1.4;
+    padding: rem(10);
+  }
+}
+
+.lunch-link__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(300);
+  background-color: $black;
+  font-size: rem(17);
+  letter-spacing: .05em;
+  color: $white;
+  padding: rem(5) rem(10);
+  transition: background-color .4s, color .4s;
+  border-left: 1px solid #000;
+  @media (min-width: 841px) and (max-width: 1140px) {
+    letter-spacing: .02em;
+    font-size: rem(14);
+    width: rem(240);
+  }
+  @media (max-width: 840px) {
+    width: 100%;
+    font-size: rem(14);
+    letter-spacing: .02em;
+    padding: rem(16);
+    border-left: none;
+    border-top: 1px solid #000;
+  }
+}
+
+.lunch-link__btn span {
+  position: relative;
+  padding-right: rem(26);
+}
+
+.lunch-link__btn span::after {
+  content: '>';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: rem(17);
+  letter-spacing: .05em;
+  color: $white;
+  transition: color .4s;
+  @media (max-width: 840px) {
+    top: 51%;
+    font-size: rem(14);
+  }
+}
+
+.lunch-link__btn:hover {
+  background-color: $white;
+  color: $black;
+  span::after {
+    color: $black;
+  }
+}
+
+/*-----------------------------------------
+アレルギー
+-----------------------------------------*/
+.allergy {
+  padding: 0 0 rem(113);
+  @include mq {
+    padding: 0 0 rem(60);
+  }
+}

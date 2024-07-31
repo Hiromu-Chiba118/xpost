@@ -1,0 +1,470 @@
+@charset "UTF-8";
+@use '../utility/variable' as *;
+
+/*-----------------------------------------
+共通
+-----------------------------------------*/
+/*
+サイズ用関数
+$pixelsVw:フォントサイズ
+$baseWidth:ベースとなる画面横幅
+*/
+
+@function vw($pixelsVw, $baseWidth) {
+  @return calc($pixelsVw / $baseWidth * 100vw);
+}
+/*
+SAMPLE
+font-size: vw(30,375);
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+}
+img {
+  width: 100%;
+}
+.inner {
+  width: 100%;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  appearance: none;
+}
+
+.no_scroll {
+  overflow: hidden;
+}
+
+.font-en {
+  font-family: $second-font;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+}
+
+
+/*-----------------------------------------
+menu
+-----------------------------------------*/
+.menu {
+  text-align: center;
+}
+
+.menu__inner {
+  max-width: 1150px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: $padding-pc;
+  @include mq {
+    padding-inline: 0;
+  }
+}
+
+.menu__btn-wrap {
+  margin-top: rem(89);
+  @include mq {
+    margin-top: rem(66);
+  }
+}
+
+.menu-btn__lists {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.menu-btn__list a {
+  display: block;
+  position: relative;
+}
+
+.menu-btn__img {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 366 / 266;
+}
+
+.menu-btn__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  scale: 1;
+  transition: scale .4s;
+}
+
+.menu-btn__img::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 /.6);
+  transition: background-color .4s;
+}
+
+.menu-btn__text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: rem(7);
+  @include mq {
+    padding-top: rem(5);
+  }
+}
+
+.menu-btn__text span {
+  display: block;
+  color: $white;
+}
+
+.menu-btn__title--upper {
+  font-size: rem(25);
+  letter-spacing: .42em;
+  text-transform: uppercase;
+  @include mq {
+    font-size: rem(18);
+    letter-spacing: .3em !important;
+  }
+}
+
+.menu-btn__title--lower {
+  margin-top: rem(3);
+  font-size: rem(18);
+  letter-spacing: .42em;
+  text-transform: lowercase !important;
+  @include mq {
+    margin-top: rem(5);
+    font-size: rem(12);
+    letter-spacing: .1em !important;
+    padding-right: rem(5);
+  }
+}
+
+.menu-btn__list a:hover  {
+  opacity: 1;
+  .menu-btn__img::after {
+    background-color: rgb(0 0 0 /.4);
+  }
+  img {
+    opacity: 1;
+    scale: 1.1;
+  }
+}
+
+.menu__foot {
+  margin-top: rem(130);
+  @include mq {
+    margin-top: rem(50);
+  }
+}
+
+.menu__wrapper {
+  position: relative;
+}
+
+.menu__wrapper::before {
+  position: absolute;
+  z-index: 20;
+  content: "";
+  top: 0;
+  left: 0;
+  width: rem(25);
+  height: 100%;
+  background-image: url(../../img/menu/course-dec.png);
+  background-repeat: repeat-y;
+  background-position: center center;
+  background-size: 100%;
+  @include mq {
+    width: rem(10);
+  }
+}
+
+.menu__wrapper--lunch,
+.menu__wrapper--drink {
+  padding-left: rem(25);
+  padding-right: rem(25);
+  @media (min-width: 1175px) and (max-width: 1300px) {
+    padding-right: calc(20vw - 235px);
+  }
+  @media (max-width: 1175px) {
+    padding-right: 0;
+  }
+  @include mq {
+    padding-left: rem(10);
+  }
+}
+
+
+.menu__wrapper--special {
+  @include mq  {
+    padding-left: rem(10);
+    height: 100vh;
+  }
+}
+
+
+.menu__wrapper--special::before {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+
+/*-----------------------------------------
+menu-summary
+-----------------------------------------*/
+.menu-summary {
+  background-color: $black;
+  color: $white;
+}
+
+.menu-summary__inner {
+  max-width: rem(1150);
+  padding: 0 $padding-pc;
+  margin-inline: auto;
+  @include mq{
+    max-width: rem(600);
+      padding: 0 rem(20);
+  }
+}
+
+.menu-summary__title {
+  text-align: center;
+  font-size: rem(40);
+  padding-left: rem(14);
+  @include mq {
+    font-size: rem(26);
+    line-height: 1.4;
+    padding-left: rem(10);
+    letter-spacing: 0.3em;
+  }
+}
+
+.menu-summary__img {
+  margin-top: rem(30);
+  width: 100%;
+  aspect-ratio: 1100 / 500;
+  overflow: hidden;
+  @include mq {
+    aspect-ratio: 305/ 180;
+  }
+}
+
+.menu-summary__img img {
+  width: 100%;
+  height: auto;
+  @include mq {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.menu-summary__meta {
+  margin-top: rem(95);
+  text-align: center;
+  @include mq {
+    margin-top: rem(40);
+    padding-inline: rem(15);
+  }
+}
+
+.course-meta__inner {
+  padding-bottom: rem(100);
+  border-bottom: rem(1) solid #666;
+  @include mq {
+    padding-bottom: rem(50);
+  }
+}
+
+.course-meta__inner--black {
+  border-bottom: rem(1) solid $black;
+}
+
+.menu-summary__foot {
+  margin-top: rem(91);
+  text-align: center;
+  @include mq {
+    margin-top: rem(45);
+    padding-inline: rem(15);
+  }
+}
+
+.menu-summary__lead {
+  font-size: rem(21);
+  line-height: 1.8333;
+  letter-spacing: .12em; 
+  @include mq {
+    font-size: rem(17);
+    letter-spacing: 0.12em;
+  }
+}
+
+.menu-summary__message {
+  margin-top: rem(37);
+  font-size: rem(14);
+  line-height: 2.607;
+  letter-spacing: .06em; 
+  @include mq {
+    text-align: justify;
+    line-height: 2;
+  }
+}
+
+.menu-summary__note {
+  margin-top: rem(30);
+  font-size: rem(12);
+  @include mq {
+    text-align: left;
+  }
+}
+
+/*-----------------------------------------
+course-meta
+-----------------------------------------*/
+.course-meta__title {
+  display: flex;
+  justify-content: center;
+  column-gap: rem(15);
+  font-size: rem(17);
+  letter-spacing: .35em;
+  @include mq {
+    display: inline-block;
+    line-height: 1.8;
+  }
+}
+
+// .course-meta__title span:nth-child(1) {
+//   text-transform: uppercase;
+// }
+
+.course-meta__title span:nth-child(3) {
+  @include mq {
+    margin-top: rem(5);
+  }
+}
+
+.course-meta__price {
+  margin-top: rem(30);
+  font-size: rem(14);
+  letter-spacing: .15em;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  column-gap: rem(5);
+  @include mq {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.course-meta__price span {
+  display: block;
+}
+
+.course-meta__price span:nth-child(1) {
+  font-family: $second-font;
+  font-size: rem(37);
+  text-transform: lowercase;
+  @include mq {
+    margin-top: rem(20);
+    font-size: rem(30);
+  }
+}
+
+.course-meta__price span:nth-child(1) strong {
+  padding-left: rem(10);
+  font-family: $third-font;
+  font-size: rem(46);
+  font-weight: 400;
+  letter-spacing: .05em;
+  padding-right: rem(5);
+  @include mq {
+    font-size: rem(42);
+  }
+}
+
+.course-meta__price span:nth-child(2) {
+  font-family: $second-font;
+  font-size: rem(16);
+  text-transform: lowercase;
+  @include mq {
+    margin-top: rem(14);
+    font-size: rem(14);
+  }
+}
+
+.course-meta__note {
+  margin-top: rem(30);
+  font-size: rem(12);
+}
+
+
+//パララックス画像-----------------
+.js-parallax01 img {
+  width: 100%;
+  height: auto;
+  @include mq {
+    width: 110%;
+    height: 110%;
+    object-fit: cover;
+  }
+}
+
+/*-----------------------------------------
+utility
+-----------------------------------------*/
+.u-bg-gray {
+  background-color: $gray2;
+}
+.u-bg-white {
+  background-color: $white;
+}
+
+.u-860 {
+  @media  (min-width: 861px) {
+    display: none;
+  }
+  @include mq {
+    display: none;
+  }
+}
+
+.u-860sp {
+  @media (min-width: 861px) {
+    display: none;
+  }
+}
+
+/*-----------------------------------------
+アレルギー
+-----------------------------------------*/
+.allergy {
+  &__txt {
+    font-size: rem(17);
+    text-align: center;
+    letter-spacing: 0.2em;
+    @include mq {
+      font-size: rem(14);
+    }
+  }
+  &__link {
+    color: $black;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,78 @@
+@charset "UTF-8";
+@use "../utility/variable" as *;
+
+/*-----------------------------------------
+共通
+-----------------------------------------*/
+/*
+サイズ用関数
+$pixelsVw:フォントサイズ
+$baseWidth:ベースとなる画面横幅
+*/
+
+@function vw($pixelsVw, $baseWidth) {
+    @return calc($pixelsVw / $baseWidth * 100vw);
+}
+/*
+SAMPLE
+font-size: vw(30,375);
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+a {
+    color: inherit;
+}
+img {
+    width: 100%;
+}
+.inner {
+    width: 100%;
+}
+.information {
+    font-family: $base-font;
+}
+
+.font-en {
+    font-family: $second-font;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+}
+/*-----------------------------------------
+information
+-----------------------------------------*/
+.information__container {
+    background-color: $gray2;
+    padding-bottom: rem(50);
+    @include mq {
+        padding-bottom: rem(20);
+    }
+}
+
+.information__foot {
+    background-color: $black;
+}
+
+/*-----------------------------------------
+information-head
+-----------------------------------------*/
+.information-head {
+    padding-block: rem(143) rem(152);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    @media (max-width: 1000px) {
+        padding-bottom: rem(70);
+    }
+    @include mq {
+        padding-block: rem(100) rem(50);
+    }
+    .c-page-title {
+        @include mq {
+            font-size: rem(30);
+        }
+    }
+}

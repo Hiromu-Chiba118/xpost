@@ -1,0 +1,68 @@
+@charset "UTF-8";
+@use "sass:math";
+
+
+$fontGothic: "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka,
+	"ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  $base-font:"Shippori Mincho", serif;
+  $second-font:"Oranienbaum", serif;
+  $third-font:"Noto Serif Display", serif;
+
+
+// color
+$white:#FFF;
+$black:#000;
+$gray:#B4B4B4;
+$gray2:#E6E6E6;
+// font weight
+$light:300;
+$regular:400;
+$normal:500;
+$bold:700;
+
+// インナー幅
+$inner: 1300px;
+$padding-pc:25px;
+$padding-sp:35px;
+
+body{
+font-family: $base-font
+}
+
+
+// remへの計算式
+@function rem($pixels) {
+	@return math.div($pixels, 16) * 1rem;
+}
+// リキッドレイアウト対応
+@function vw($window_width, $size) {
+	@return math.div($size, $window_width) * 100vw;
+}
+// 単位を外す
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+  @return $number;
+}
+
+//ブレイクポイント
+$breakpoints: (
+  md: 767,
+  lg: 1200,
+  tb: 1120,
+);
+
+//メディアクエリー
+$mediaquerys: (
+  lg: "screen and (max-width: #{map-get($breakpoints,'lg')}px)",
+  tb: "screen and (max-width: #{map-get($breakpoints,'tb')}px)",
+  md: "screen and (max-width: #{map-get($breakpoints,'md')}px)",
+);
+
+// @include mq(){}で書くとブレークポイントが反映される（初期値はmd）
+@mixin mq($mediaquery: md) {
+	@media #{map-get($mediaquerys, $mediaquery)} {
+	  @content;
+	}
+  }

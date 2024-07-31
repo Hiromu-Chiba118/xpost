@@ -1,0 +1,427 @@
+@charset "UTF-8";
+@use '../utility/variable' as *;
+
+/*-----------------------------------------
+共通
+-----------------------------------------*/
+/*
+サイズ用関数
+$pixelsVw:フォントサイズ
+$baseWidth:ベースとなる画面横幅
+*/
+
+@function vw($pixelsVw, $baseWidth) {
+  @return calc($pixelsVw / $baseWidth * 100vw);
+}
+/*
+SAMPLE
+font-size: vw(30,375);
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+}
+img {
+  width: 100%;
+}
+.inner {
+  width: 100%;
+}
+
+.font-en {
+  font-family: $second-font;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+}
+
+.gallery-inner {
+  max-width: 1204px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: $padding-pc;
+  @include mq {
+    padding-inline: 0;
+  }
+}
+/*-----------------------------------------
+gallery
+-----------------------------------------*/
+#gallery  {
+  .header__logo {
+    svg {
+        path {
+            fill: #fff;
+        }
+    }
+}
+}
+
+.gallery {
+  background-color: $black;
+  font-family: $base-font;
+}
+.gallery__container {
+  padding-top: rem(143);
+  color: $white;
+  @include mq {
+    padding-block: rem(100) rem(20);
+  }
+}
+
+//page-title--------
+.gallery__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  @include mq {
+    padding-inline: rem(35);
+  }
+}
+
+.gallery__text {
+  margin-top: rem(44);
+  text-transform: uppercase;
+  font-size: rem(12);
+  line-height: 1.625;
+  letter-spacing: 0.42em;
+}
+
+
+/*-----------------------------------------
+gallery-block 共通
+-----------------------------------------*/
+.gallery-block {
+  // padding-bottom: rem(150);
+}
+//gallery メインビジュアル--------
+.gallery-block__mv-box {
+  padding-inline: rem(27);
+  @include mq {
+    padding-inline: 0;
+  }
+}
+
+.gallery-block__mv {
+  width: 100%;
+  aspect-ratio: 1100 / 600;
+  overflow: hidden;
+  @include mq {
+    aspect-ratio: 375 / 320;
+  }
+}
+
+//gallery 動画01--------
+.gallery-block__movie {
+  max-width: 600px;
+  width: 100%;
+  margin-inline: auto;
+  aspect-ratio: 600 / 400;
+  overflow: hidden;
+}
+
+.gallery-block__movie video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+//gallery-col-4 4画像横並び--------
+.gallery-col-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 4.3%;
+  @include mq {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: rem(10);
+  }
+}
+
+.col-4-item {
+  aspect-ratio: 250 / 300;
+  overflow: hidden;
+}
+
+//gallery-col-2 2画像(動画)横並び--------
+.gallery-col-2 {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: auto;
+  column-gap: rem(10);
+  @include mq {
+    grid-template-columns: 1fr;
+    row-gap: rem(10);
+  }
+}
+
+.col-2-item {
+  aspect-ratio: 545 / 500;
+  overflow: hidden;
+}
+
+
+/*-----------------------------------------
+gallery-block--01 黒背景
+-----------------------------------------*/
+.gallery-block--01 {
+  background-color: $black;
+  position: relative;
+  z-index: 10;
+  padding-bottom: rem(150);
+  @include mq {
+    padding-bottom: rem(70);
+  }
+  .gallery-block__mv-box {
+    margin-top: rem(48);
+  }
+  .gallery-block__movie {
+    margin-top: rem(149);
+    @include mq {
+      margin-top: rem(10);
+      padding-inline: rem(35);
+    }
+  }
+  .gallery-block__items.gallery-col-4 {
+    margin-top: rem(148);
+    @include mq {
+      margin-top: rem(70);
+      padding-inline: rem(20);
+    }
+  }
+  .gallery-block__items.gallery-col-2 {
+    margin-top: rem(148);
+    padding-inline: rem(27);
+    @include mq {
+      padding-inline: rem(35);
+      margin-top: rem(70);
+    }
+  }
+  .gallery-col-2__item.col-2-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+/*-----------------------------------------
+背景切り替え
+-----------------------------------------*/
+.back {
+  pointer-events: none;
+  position:fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(7,1fr);
+}
+
+.back__part {
+  clip-path: inset(100% 0% 0% 0%);
+  opacity: 0;
+}
+
+
+.back-gray {
+  // opacity: 0;
+  z-index: 2;
+  .back__part{
+      // opacity: 1;
+      // clip-path: inset(0% 0% 0% 0%);
+      background: $gray2;
+      margin-top: -1px;
+  }
+}
+
+/*-----------------------------------------
+gallery-block--02 白背景
+-----------------------------------------*/
+.gallery-block--02 {
+  background-color: $white;
+  padding-block: rem(150) rem(200);
+  @include mq {
+    padding-block: rem(70);
+  }
+  .gallery-inner {
+    position: relative;
+    z-index: 10;
+  }
+  .gallery-block__items.gallery-col-2 {
+    padding-bottom: rem(200);
+    padding-inline: rem(27);
+    position: relative;
+    margin-left: auto;
+    display: block;
+    @include mq {
+      padding-inline: 0;
+      padding-bottom: rem(140);
+    }
+  }
+  .col-2-item {
+    width: vw(650, 1204);
+    aspect-ratio: 650 / 450;
+    overflow: hidden;
+    @media (min-width: 1204px) {
+      width: rem(650);
+    }
+    @include mq {
+      width:  80%;
+    }
+  }
+  .col-2-item--image {
+    margin-left: auto;
+  }
+
+  .col-2-item--movie {
+    position: absolute;
+    bottom: 0;
+    left: rem(27);
+    @include mq {
+      left: rem(35);
+      width: 60%;
+    }
+  }
+
+  .col-2-item--movie video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gallery-block__mv-box {
+    margin-top: rem(150);
+    @include mq {
+      margin-top: rem(70);
+    }
+  }
+
+  .gallery-block__items.gallery-col-4 {
+    margin-top: rem(148);
+    @include mq {
+      margin-top: 0;
+      padding-inline: rem(20);
+    }
+  }
+}
+
+/*-----------------------------------------
+gallery-block--03 黒背景
+-----------------------------------------*/
+.gallery-block--03 {
+  position: relative;
+  z-index: 10;
+  background-color: $black;
+  padding-block: rem(150);
+  @include mq {
+    padding-block: rem(70);
+  }
+  .gallery-block__movie {
+    @include mq {
+      padding-inline: rem(35);
+    }
+  }
+  .gallery-block__mv-box {
+    margin-top: rem(150);
+    @include mq {
+      margin-top: rem(70);
+    }
+  }
+  .gallery-block__gallery.gallery-col-3 {
+    margin-top: rem(150);
+    padding-inline: rem(27);
+    padding-bottom: vw(284, 1204);
+    position: relative;
+    @media (min-width: 1204px) {
+      padding-bottom: rem(284);
+    }
+    @include mq {
+      margin-top: rem(-20);
+      padding-inline: 0;
+      padding-bottom: vw(180,375);
+    }
+  }
+}
+
+
+.col-3-item:nth-child(2) {
+  margin-left: auto;
+  margin-top: calc(-30.2752vw + 112.5138px);
+  @media (min-width: 1204px) {
+    margin-top: rem(-252);
+  }
+  @include mq {
+    margin-top: rem(-30);
+  }
+}
+
+.col-3-item:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: vw(130 , 1204);
+  @media (min-width: 1204px) {
+    left: rem(130);
+  }
+  @include mq {
+  }
+}
+
+.col-3-item {
+  width: vw(650, 1204);
+  aspect-ratio: 650 / 450;
+  overflow: hidden;
+  @media (min-width: 1204px) {
+    width: rem(650);
+  }
+  @include mq {
+    width: 70%;
+  }
+}
+
+
+.col-3-item--movie {
+  width: vw(550, 1204);
+  aspect-ratio: 550 / 380;
+  @media (min-width: 1204px) {
+    width: rem(550);
+  }
+}
+
+.col-3-item video,
+.col-4-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.js-parallax01 img,
+.js-parallax02 img,
+.js-parallax03 img,
+.js-parallax04 img,
+.js-parallax05 img,
+.js-parallax06 img {
+  width: 100%;
+  height: auto;
+}
+
+.js-parallax06 img {
+  @include mq {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.js-expansion {
+  transform: scale(1.2);
+  display: block;
+  transition: transform 1s ease-in-out; /* 変化にかかる時間を指定 */
+  width: 100%;
+  height: 100%;
+}
+
+.js-expansion.is-visible {
+  transform: scale(1); /* 最終スケールを指定 */
+}

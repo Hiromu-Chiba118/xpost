@@ -1,0 +1,541 @@
+@charset "UTF-8";
+@use '../utility/variable' as *;
+
+/*-----------------------------------------
+共通
+-----------------------------------------*/
+/*
+サイズ用関数
+$pixelsVw:フォントサイズ
+$baseWidth:ベースとなる画面横幅
+*/
+
+@function vw($pixelsVw, $baseWidth) {
+  @return calc($pixelsVw / $baseWidth * 100vw);
+}
+/*
+SAMPLE
+font-size: vw(30,375);
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+}
+img {
+  width: 100%;
+}
+.inner {
+  width: 100%;
+}
+.concept {
+  font-family: $base-font;
+}
+
+.font-en {
+  font-family: $second-font;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+}
+/*-----------------------------------------
+concept
+-----------------------------------------*/
+.concept__container {
+  background-color: $gray2;
+}
+
+.concept__foot {
+  background-color: $black;
+}
+
+/*-----------------------------------------
+concept-head
+-----------------------------------------*/
+.concept-head {
+  padding-block: rem(143) rem(152);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  @media (max-width: 1000px) {
+    padding-bottom: rem(70);
+  }
+  @include mq {
+    padding-block: rem(100) rem(50);
+  }
+}
+
+
+
+.concept-head__inner {
+  max-width: rem(1150);
+  width: 100%;
+  padding: 0 $padding-pc;
+  margin-inline: auto;
+  @include mq {
+    max-width: rem(500);
+    padding: 0;
+  }
+}
+
+.concept-head__catch-wrap {
+  @include mq {
+    padding-inline: 20px;
+  }
+}
+
+.concept-head__catch--en {
+  margin-top: rem(73);
+  font-size: rem(45);
+  letter-spacing: 0.42em;
+  text-transform: lowercase;
+  @media (max-width: 1000px) {
+    margin-top: rem(57);
+    font-size: rem(36);
+    line-height: 1.4;
+  }
+}
+
+.concept-head__catch--en span {
+  text-transform: uppercase;
+  @include mq {
+    display: block;
+    margin-bottom: rem(-54);
+  }
+}
+
+.concept-head__catch--ja {
+  font-size: rem(14);
+  letter-spacing: 0.03em;
+  @include mq {
+    margin-top: rem(4);
+  }
+}
+
+/*-----------------------------------------
+concept-head ボタン
+-----------------------------------------*/
+.concept-head__btn-wrap {
+  margin-top: rem(66);
+  @include mq {
+    padding-inline: 10px;
+  }
+}
+
+.concept-btn__lists {
+  display: flex;
+  justify-content: center;
+}
+
+.concept-btn__list {
+  width: 33.3333%;
+}
+
+.concept-btn__list:not(:last-child) {
+  border-right: 1px solid $black;
+}
+
+.concept-btn__list a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: rem(22) rem(36);
+  position: relative;
+  @include mq {
+    padding-top: rem(10);
+    padding-bottom: rem(20);
+    height: 100%;
+  }
+}
+
+.concept-btn__list a::after {
+  content: '';
+  position: absolute;
+  bottom: rem(12);
+  left: 50%;
+  transform: translateX(-50%);
+  width: rem(20);
+  height: rem(8);
+  background-image: url(../../img/concept/ico_btn-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  @include mq {
+    bottom: 0;
+  }
+}
+
+.concept-btn__list span {
+  display: block;
+}
+
+.concept-btn__ja {
+  font-size: rem(17);
+  letter-spacing: 0.35em;
+  @media (max-width: 1000px) {
+    font-size: rem(15);
+  }
+  @include mq {
+    font-size: rem(14);
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+}
+
+.concept-btn__en {
+  margin-top: rem(11);
+  font-size: rem(14);
+  letter-spacing: 0.42em;
+  position: relative;
+  @include mq {
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+  }
+}
+
+
+
+/*-----------------------------------------
+concept-content 
+-----------------------------------------*/
+.concept-content {
+  color: $white;
+}
+//コンセプトコンテンツ main背景------------------
+.concept-content__head {
+  position: relative;
+  height: vw(800, 1300);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 1000px) {
+    padding-top: rem(20);
+  }
+  @include mq {
+    height: vw(665, 375);
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .concept-content--feature .concept-content__head {
+    padding-top: rem(48);
+  }
+  
+  .concept-content--kuroge .concept-content__head {
+    padding-top: rem(14);
+  }
+  
+  .concept-content--space .concept-content__head {
+    padding-top: rem(88);
+  }
+}
+
+//コンセプトコンテンツ 動画------------------
+.concept-content__movie {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1300 / 800;
+  overflow: hidden;
+  @include mq {
+    aspect-ratio: 375 / 665;
+  }
+}
+
+.concept-content__movie::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.concept-content__movie video {
+  //ここ見直す
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.concept-content__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1300 / 800;
+  overflow: hidden;
+  @include mq {
+    aspect-ratio: 375 / 665;
+  }
+}
+
+.concept-content__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+//コンセプトコンテンツ main テキスト------------------
+.concept-content__contents {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+.concept-content__title {
+  font-size: rem(40);
+  line-height: 1;
+  letter-spacing: 0.42em;
+  padding-left: rem(14);
+  @media (max-width: 1000px) {
+    font-size: rem(32);
+  }
+  @include mq {
+    font-size: rem(26);
+    line-height: 1.4;
+  }
+}
+
+.concept-content__lead {
+  margin-top: rem(86);
+  font-size: rem(21);
+  line-height: 1.8333;
+  letter-spacing: 0.25em;
+  @media (max-width: 1000px) {
+    margin-top: rem(50);
+    font-size: rem(19);
+  }
+  @include mq {
+    font-size: rem(18);
+    letter-spacing: 0.12em;
+  }
+}
+
+.concept-content__text {
+  margin-top: rem(36);
+  font-size: rem(14);
+  line-height: 2.6071;
+  letter-spacing: 0.16em;
+  @media (max-width: 1000px) {
+    margin-top: rem(30);
+    line-height: 2;
+  }
+  @include mq {
+    text-align: left;
+    letter-spacing: 0.1em;
+    text-align: justify;
+  }
+}
+
+//コンセプトコンテンツ 下半分 画像3枚が入っている------------------
+.concept-content__foot {
+  padding-block: rem(100);
+  @include mq {
+    padding-block: rem(60);
+  }
+}
+
+//コンセプトコンテンツ 画像コンテンツ画像3枚が入っている------------------
+.concept-content__image {
+  position: relative;
+  @include mq {
+    height: vw(700, 375);
+  }
+}
+
+//コンセプトコンテンツ 画像3枚 パララックス------------------
+.concept-content-image__items {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  column-gap: 2.8%;
+  @include mq {
+    display: contents;
+  }
+}
+
+//画像 左------------------
+.concept-content-image__item:nth-child(1) {
+  align-self: self-start;
+  width: 24.5%;
+  aspect-ratio: 270 /350;
+  overflow: hidden;
+  @include mq {
+    position: absolute;
+   
+  }
+}
+//画像 真ん中------------------
+.concept-content-image__item:nth-child(2) {
+  align-self: center;
+  width: 45.4%;
+  aspect-ratio: 500 / 600;
+  overflow: hidden;
+  @include mq {
+    position: absolute;
+  }
+}
+//画像 右------------------
+.concept-content-image__item:nth-child(3) {
+  align-self: self-end;
+  width: 24.5%;
+  aspect-ratio: 270 /350;
+  overflow: hidden;
+  @include mq {
+    position: absolute;
+
+  }
+}
+
+.concept-content-image__item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.concept-content-image__title {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  @include mq {
+    bottom: rem(5);
+  }
+}
+//about us スマホ画像3枚------------------
+.concept-content--feature {
+  .concept-content-image__item:nth-child(1) {
+    @include mq {
+      bottom: rem(20);
+      left: 0;
+      width: 50%;
+      // z-index: 5;
+    }
+  }
+  .concept-content-image__item:nth-child(2) {
+    @include mq {
+      bottom: rem(200);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+    }
+  }
+  .concept-content-image__item:nth-child(3) {
+    @include mq {
+      top: 0;
+      right: 0;
+      width: 50%;
+    }
+  }
+}
+//kuroge スマホ画像3枚------------------
+.concept-content--kuroge {
+  .concept-content-image__item:nth-child(1) {
+    @include mq {
+      top: rem(20);
+      left: 0;
+      width: 50%;
+      z-index: 5;
+    }
+  }
+  .concept-content-image__item:nth-child(2) {
+    @include mq {
+      top: rem(240);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      z-index: 3;
+    }
+  }
+  .concept-content-image__item:nth-child(3) {
+    @include mq {
+      bottom: rem(20);
+      right: 0;
+      width: 50%;
+    }
+  }
+}
+//space スマホ画像3枚------------------
+.concept-content--space {
+  .concept-content-image__item:nth-child(1) {
+    @include mq {
+      bottom: rem(20);
+      left: 0;
+      width: 60%;
+    }
+  }
+  .concept-content-image__item:nth-child(2) {
+    @include mq {
+      top: 0;
+      left: 0;
+      width: 80%;
+    }
+  }
+  .concept-content-image__item:nth-child(3) {
+    @include mq {
+      bottom: rem(200);
+      right: 0;
+      width: 50%;
+      z-index: 5;
+    }
+  }
+}
+
+
+/*-----------------------------------------
+video 全画面幅でビデオ再生ボタンを非表示にする
+-----------------------------------------*/
+/* ビデオコントロールを全ての画面幅で非表示にする */
+video {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+}
+
+video::-moz-media-controls {
+  display: none !important;
+}
+
+video::-ms-media-controls {
+  display: none !important;
+}
+
+
+/*-----------------------------------------
+utility
+-----------------------------------------*/
+
