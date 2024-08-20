@@ -48,18 +48,5 @@ jQuery(function ($) {
     $('html').toggleClass('is-fixed');
   });
 
-  // 天気
-  let tenki = gsap.timeline({delay:1,});
-  tenki.fromTo('#sun', { opacity: 0 }, { opacity: 1 ,duraion:0.7,});
-  tenki.fromTo('#cloud1', { opacity: 0 }, { opacity: 1 ,duraion:0.7,},"-=0.4");
-  tenki.fromTo('#cloud2', { opacity: 0 }, { opacity: 1 ,duraion:0.7,},"-=0.4");
-  let kusa = gsap.timeline({delay:2,});
-  kusa.fromTo('#kusa1', { opacity: 0 }, { opacity: 1 ,duraion:0.7,},"-=0.4");
-  kusa.fromTo('#kusa2', { opacity: 0 }, { opacity: 1 ,duraion:0.7,},"-=0.4");
-  kusa.fromTo('#kusa3', { opacity: 0 }, { opacity: 1 ,duraion:0.7,},"-=0.4");
-  kusa.fromTo('#ki1', { opacity: 0 }, { opacity: 1 ,duraion:0.7,},"+=0.5");
-  kusa.fromTo('#ki2', { opacity: 0 }, { opacity: 1 ,duraion:0.7,},"-=0.4");
-  kusa.fromTo('#ki3', { opacity: 0 }, { opacity: 1 ,duraion:0.7,},"-=0.4");
-  let kesiki = gsap.timeline({delay:4,});
-  kesiki.fromTo('#yama', { opacity: 0 }, { opacity: 1 ,duraion:1.5,});
+  
 });
