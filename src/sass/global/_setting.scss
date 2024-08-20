@@ -10,8 +10,9 @@ $padding-sp: 20px;
 // ※PC時：デザインカンプの余白の幅ではない。PC時は通常25pxで大丈夫！
 
 
-$base-font-family: "";
-$second-font-family: "";
+$base-font-family: "Zen Kaku Gothic Antique", sans-serif;
+$second-font-family: "Cormorant Garamond", serif;
+$third-font-family:"Cinzel", serif;
 // ※検証ツールでしっかり反映されているか確認する
 
 body {

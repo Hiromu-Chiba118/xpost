@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* リキッドレイアウト対応 */
 body {
-  font-family: "";
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
 }
 
 @media only screen and (min-width: 768px) {
@@ -190,5 +190,56 @@ html {
   font-size: 1.25rem;
   background-color: #000;
   color: #fff;
+}
+
+.fv__container {
+  position: relative;
+  height: 100vh;
+}
+
+.fv__img {
+  position: relative;
+  z-index: 1;
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1.1" /><feFuncG type="linear" slope="1.1" /><feFuncB type="linear" slope="1.1" /></feComponentTransfer></filter></svg>#filter');
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+  height: 100%;
+}
+
+.fv__content {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  max-width: 1000px;
+  max-width: 62.5rem;
+  padding: 50px 70px;
+  padding: 3.125rem 4.375rem;
+  z-index: 4;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(0.1875rem);
+          backdrop-filter: blur(0.1875rem);
+}
+
+.fv__title {
+  color: white;
+  text-transform: uppercase;
+  font-size: 55px;
+  font-size: 3.4375rem;
+  letter-spacing: 0.5em;
+  font-weight: 500;
+  font-family: "Cinzel", serif;
+  z-index: 2;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+}
+
+.fv__text {
+  font-size: 24px;
+  font-size: 1.5rem;
+  color: white;
+  letter-spacing: 0.2em;
+  line-height: 2;
+  font-family: "Cinzel", serif;
 }
 /*# sourceMappingURL=styles.css.map */

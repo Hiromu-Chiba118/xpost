@@ -78,7 +78,7 @@ const webp = require('gulp-webp');
 const imgImagemin = () => {
     return src(srcPath.img)
     .pipe(imagemin([
-        imageminMozjpeg({quality: 80}),
+        imageminMozjpeg({quality: 40}),
         imageminPngquant(),
         imageminSvgo({plugins: [{removeViewbox: false}]})
         ],
