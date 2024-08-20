@@ -1,0 +1,8 @@
+@use "global" as *;
+.section-title {
+  font-size: rem(45);
+  font-weight: $normal;
+  font-family: $third-font-family;
+  color: $black;
+  letter-spacing: 0.3em;
+}
