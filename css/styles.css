@@ -461,6 +461,9 @@ main {
 }
 
 .loader__item {
+  margin-left: -1px;
+  -webkit-transform: scale(calc);
+          transform: scale(calc);
   background: #4e7660;
 }
 

@@ -290,8 +290,9 @@ main{
 }
 
 .loader__item {
+    margin-left: -1px;
+    transform: scale(calc(1 + 1px ));
     background: $green;
-
 }
 
 .loader__title {

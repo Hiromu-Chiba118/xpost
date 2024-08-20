@@ -56,11 +56,11 @@ jQuery(function ($) {
   // ローディング
   let tl=gsap.timeline();
   tl.fromTo(".loader__title span",{  opacity: 0,  x:-10,},{  opacity: 1,  x:0,  stagger:0.08,});
-  tl.fromTo(".loader__title",{  opacity: 1,  y:0,},{  opacity: 0,  y:-15,});
-  tl.fromTo(".loader__item",{  clipPath:"inset(0% 0% 0% 0% )",},{  clipPath:"inset(0% 0% 100% 0% )",  duration:1,  stagger:0.2,  ease: "power3.inOut"  },"-=0.1");
+  tl.to(".loader__title span",{  opacity: 0,  y:-10,  stagger:{from:"random",each:0.04,},},"+=0.3");
+  tl.fromTo(".loader__item",{  clipPath:"inset(0% 0% 0% 0% )",},{  clipPath:"inset(0% 0% 100% 0% )",  duration:1,  stagger:0.2,  ease: "power3.inOut"  },"-=0.2");
   tl.to(".loader",{  display:"none",});
   tl.fromTo(".fv__title span",{ opacity: 0,yPercent:100,},{  opacity: 1, yPercent:0, ease:Power3.out,},"-=0.9");
-  tl.fromTo(".fv__text",{  opacity: 0,},{  opacity: 1,});
+  tl.fromTo(".fv__text span",{  opacity: 0,},{  opacity: 1,stagger:0.1,},"-=0.4");
 
 
 });
