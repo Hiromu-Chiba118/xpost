@@ -63,4 +63,13 @@ jQuery(function ($) {
   tl.fromTo(".fv__text span",{  opacity: 0,},{  opacity: 1,stagger:0.1,},"-=0.4");
 
 
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 4,
+    loop:true,
+    speed:3000,
+    autoplay:{
+      delay:0,
+    }
+  });
+
 });

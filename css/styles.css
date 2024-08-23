@@ -462,8 +462,6 @@ main {
 
 .loader__item {
   margin-left: -1px;
-  -webkit-transform: scale(calc);
-          transform: scale(calc);
   background: #4e7660;
 }
 
@@ -485,5 +483,70 @@ main {
 
 .loader__title span {
   display: inline-block;
+}
+
+.bg {
+  margin: 100px 0;
+  margin: 6.25rem 0;
+  max-width: 1000px;
+  max-width: 62.5rem;
+  padding: 0 25px;
+  margin-inline: auto;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#000));
+  background: linear-gradient(#fff, #000);
+}
+@media screen and (max-width: 767px) {
+  .bg {
+    max-width: 37.5rem;
+    padding: 0 20px;
+  }
+}
+
+.wrap1 {
+  -webkit-perspective: 50vw;
+          perspective: 50vw;
+}
+.wrap1 .swiper {
+  width: 100%;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: rotateX(-70deg);
+          transform: rotateX(-70deg);
+}
+
+.wrap {
+  -webkit-perspective: 50vw;
+          perspective: 50vw;
+}
+.wrap .swiper {
+  width: 100%;
+}
+
+.wrap2 {
+  -webkit-perspective: 50vw;
+          perspective: 50vw;
+}
+.wrap2 .swiper {
+  width: 100%;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: rotateX(-85deg);
+          transform: rotateX(-85deg);
+}
+
+.imgs {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: rotateY(10deg);
+          transform: rotateY(10deg);
+}
+
+.swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+          transition-timing-function: linear !important;
+}
+
+.img {
+  aspect-ratio: 3/2;
 }
 /*# sourceMappingURL=styles.css.map */

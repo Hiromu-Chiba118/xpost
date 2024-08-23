@@ -291,7 +291,6 @@ main{
 
 .loader__item {
     margin-left: -1px;
-    transform: scale(calc(1 + 1px ));
     background: $green;
 }
 
@@ -317,3 +316,54 @@ main{
 
 
 //===================
+.bg{
+    margin: rem(100) 0;
+    max-width: rem(1000);
+    padding: 0 $padding-pc;
+    margin-inline: auto;
+    @include mq {
+        max-width: rem(600);
+        padding: 0 $padding-sp;
+    }
+    background: linear-gradient($white, $black);
+}
+.wrap1 {
+    perspective: 50vw;
+    .swiper {
+        width: 100%;
+        transform-origin: bottom;
+        transform: rotateX(-70deg);
+    
+    }
+}
+.wrap {
+    perspective: 50vw;
+    .swiper {
+        width: 100%;
+    
+    }
+}
+.wrap2{
+    perspective: 50vw;
+    .swiper {
+        width: 100%;
+        transform-origin:  top;
+        transform: rotateX(-85deg);
+    
+    }
+}
+
+
+.imgs {
+    transform-origin: left;
+    transform: rotateY(10deg);
+}
+
+.swiper-wrapper {
+    transition-timing-function: linear !important;
+}
+
+.img {
+    aspect-ratio: 3/2;
+}
+
