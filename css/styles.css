@@ -278,7 +278,7 @@ main {
   border-radius: 0 0 12.5rem 0;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 20px;
   gap: 1.25rem;
 }
@@ -301,6 +301,12 @@ main {
   text-align: center;
   margin-bottom: 50px;
   margin-bottom: 3.125rem;
+  overflow: hidden;
+  line-height: 1.2;
+}
+
+.news__title span {
+  display: inline-block;
 }
 
 .news__items {
@@ -348,15 +354,17 @@ main {
   color: #554c3c;
 }
 
-.dec {
+.div-img {
   aspect-ratio: 1200/300;
   margin-bottom: 50px;
   margin-bottom: 3.125rem;
+  overflow: hidden;
 }
 
-.dec img {
+.div-img img {
   -o-object-position: top;
      object-position: top;
+  height: 120%;
 }
 
 .about {
@@ -373,6 +381,11 @@ main {
   margin-bottom: 50px;
   margin-bottom: 3.125rem;
   text-align: center;
+  line-height: 1.2;
+  overflow: hidden;
+}
+.about__title span {
+  display: inline-block;
 }
 
 .about__text {
@@ -548,5 +561,32 @@ main {
 
 .img {
   aspect-ratio: 3/2;
+}
+
+.test {
+  margin-bottom: 100vh;
+}
+
+.test__inner {
+  max-width: 1000px;
+  max-width: 62.5rem;
+  padding: 0 25px;
+  margin-inline: auto;
+}
+@media screen and (max-width: 767px) {
+  .test__inner {
+    max-width: 37.5rem;
+    padding: 0 20px;
+  }
+}
+
+.test__container {
+  padding: 100px 0;
+  padding: 6.25rem 0;
+}
+
+.test__box {
+  font-size: 50px;
+  font-size: 3.125rem;
 }
 /*# sourceMappingURL=styles.css.map */

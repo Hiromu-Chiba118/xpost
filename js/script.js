@@ -72,4 +72,157 @@ jQuery(function ($) {
     }
   });
 
+  gsap.fromTo(
+  ".gallery__items .gallery__item",
+  {
+    opacity: 0,
+  },
+  {
+    opacity: 1,
+    duration:0.7,
+    stagger:0.1,
+    ease:"none",
+    scrollTrigger:{
+      trigger:".gallery__items",
+      start:"top 90%"
+    }
+  }) ;
+  
+
+  gsap.fromTo(
+    ".news__items .news__item",
+    {
+      opacity:0,
+      x:15,
+    },
+    {
+      x:0,
+      opacity:1,
+      duration:0.6,
+      stagger:0.15,
+      scrollTrigger:{
+        trigger:".news__items",
+        start:"top 90%"
+      }
+    }
+  )
+
+  gsap.fromTo(
+    ".about__imgs .about__img",
+    {
+      opacity:0,
+      y:-40,
+      rotate:-15,
+      x:25,
+    },
+    {
+      x:0,
+      rotate:0,
+      opacity:1,
+      y:0,
+      duration:1.0,
+      stagger:0.2,
+      scrollTrigger:{
+        trigger:".about__imgs",
+        start:"top 90%"
+      }
+    }
+  )
+
+
+  gsap.fromTo(
+    ".test__box",
+    {
+x:1000,
+    } ,
+    {
+      x:0,
+      scrollTrigger:{
+        trigger:".test__box",
+        start:"top bottom",
+        scrub:0.2,
+      }
+    }
+  )
+
+
+  gsap.fromTo(
+    ".div-img img",
+    {
+y:-120,
+    },
+    {
+y:0,
+scrollTrigger:{
+  trigger:".div-img",
+  start:"top bottom",
+  scrub:1,
+}
+
+    }
+  )
+
+
+  gsap.fromTo(
+    ".gallery__title span",
+    {
+      opacity:0,
+      yPercent:100,
+    },
+    {
+      opacity:1,
+      yPercent:0,
+      duration:0.8,
+      stagger:0.1,
+      scrollTrigger:{
+        trigger:".gallery__title",
+        start:"top 90%",
+      }
+
+    }
+  );
+
+  gsap.fromTo(
+    ".news__title span",
+    {
+      opacity:0,
+      yPercent:100,
+    },
+    {
+      opacity:1,
+      yPercent:0,
+      duration:0.8,
+      stagger:0.1,
+      scrollTrigger:{
+        trigger:".news__title",
+        start:"top 90%",
+      }
+
+    }
+  )
+
+
+  gsap.fromTo(
+    ".about__title span",
+    {
+      opacity:0,
+      yPercent:100,
+    },
+    {
+      opacity:1,
+      yPercent:0,
+      duration:0.8,
+      stagger:0.1,
+      scrollTrigger:{
+        trigger:".about__title",
+        start:"top 90%",
+      }
+
+    }
+  )
+
+
+
+  
+
 });
