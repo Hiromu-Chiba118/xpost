@@ -1,24 +1,19 @@
 @charset "UTF-8";
+/* リキッドレイアウト対応 */
 body {
   font-family: "";
 }
 
-body .sp {
-  display: none;
-}
-@media screen and (max-width: 767px) {
-  body .sp {
-    display: block !important;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  body .pc {
+@media only screen and (min-width: 768px) {
+  .sp {
     display: none !important;
   }
 }
-
-/* リキッドレイアウト対応 */
+@media only screen and (max-width: 767px) {
+  .pc {
+    display: none !important;
+  }
+}
 html {
   font-size: 16px;
 }
@@ -39,23 +34,24 @@ html {
 }
 
 /* pcの電話番号発信対応 */
+a[href^="tel:"] {
+  pointer-events: none;
+}
 @media screen and (max-width: 767px) {
   a[href^="tel:"] {
-    pointer-events: none;
+    pointer-events: all;
   }
 }
 
-/* ホバー */
 a {
   text-decoration: none;
   color: inherit;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
 }
-@media screen and (max-width: 767px) {
-  a:hover {
-    opacity: 0.8;
-  }
+
+img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 *,
@@ -90,6 +86,7 @@ dd {
 /* Set core root defaults */
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* Set core body defaults */
@@ -115,11 +112,6 @@ img {
   max-width: 100%;
   display: block;
   width: 100%;
-}
-
-/* Natural flow and rhythm in articles by default */
-article > * + * {
-  margin-top: 1em;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -175,23 +167,24 @@ select::-ms-expand {
 
 .inner {
   width: 100%;
-  padding-right: 20px;
-  padding-left: 20px;
+  max-width: 1150px;
+  padding-right: 25px;
+  padding-left: 25px;
   margin-right: auto;
   margin-left: auto;
 }
 @media screen and (max-width: 767px) {
   .inner {
-    max-width: 1150px;
-    padding-right: 25px;
-    padding-left: 25px;
+    max-width: 1140px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }
 
 .test {
   font-size: 20px;
   font-size: 1.25rem;
-  background-color: #111;
+  background-color: #000;
   color: #fff;
 }
 /*# sourceMappingURL=styles.css.map */
