@@ -1,72 +1,182 @@
 @use 'global' as *;
 
-.section {
-  margin-top: rem(100);
+.top {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
-.section__container {
+.top__inner {
+  max-width: rem(1300);
+  padding: 0 $padding-pc;
+  margin-inline: auto;
+  @include mq {
+    max-width: rem(600);
+    padding: 0 $padding-sp;
+  }
+}
+
+.top__container {
+}
+
+.top__title {
+  font-size: rem(60);
+}
+
+.section {
+  overflow: hidden;
+  background: rgba($color: $beige, $alpha: 0.5);
   .section__title {
     font-size: rem(50);
     letter-spacing: 0.1em;
+    margin-bottom: rem(40);
   }
 
-  .section__slider {
-    padding: rem(10);
-    border: 2px solid $black;
-    border-radius: rem(5);
+  .section__container {
+    padding: 50vh 0;
   }
 
-  .section__img {
+  .section__content {
+  }
+
+  .card {
+    border-radius: rem(6);
+    background: $white;
+  }
+
+  .card__img {
+    margin-bottom: rem(15);
     aspect-ratio: 3/2;
-    width: rem(350);
   }
 
-  .section__img img {
-    border-radius: rem(5);
+  .card__img img {
+    border-radius: rem(6) rem(6) 0 0;
   }
 
-
-  .section__buttons {
-    margin-top: rem(20) ;
-    display: grid;
-    grid-template-columns:1fr 1fr;
-    gap: rem(20) ;
-    width: fit-content;
-  }
-  
-  .section__button {
-    cursor: pointer;
-    aspect-ratio: 1;
-    background: #000;
-    width: rem(30) ;
-    clip-path: polygon(0 0, 80% 50%, 0 100%);
-    transition: 0.3s ease-in-out all;
+  .card__texts {
+    padding: 0 rem(20) rem(40);
   }
 
-  @media (any-hover: hover) {
-    .section__button:hover{
-      opacity: 0.5;
-    }
+  .card__title {
+    margin-bottom: rem(10);
+    font-size: rem(22);
+    font-weight: $bold;
+    color: $baseColor;
   }
-  
-  .button-next {
-  }
-  
-  .button-prev {
-    transform: rotate(180deg);
-  }
-  
 
-  .section__pagenation {
-    margin-top: rem(20) ;
-    background: #000;
+  .card__text {
+    font-size: rem(16);
+    line-height: 1.8;
+    font-weight: $regular;
+    color: $baseColor;
+  }
+
+  //swiper ================
+  .swiper {
+    overflow: unset;
+    position: relative;
+  }
+
+  .button {
+    position: absolute;
+    aspect-ratio: 3/2;
+    width: rem(300);
+    z-index: 4;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // .button__item {
+  //   aspect-ratio: 1;
+  //   border-radius: 50%;
+  //   width: rem(50);
+  //   position: relative;
+  //   background: $green;
+  //   &::after {
+  //     aspect-ratio: 1;
+  //     width: rem(30);
+  //     content: '';
+  //     display: block;
+  //     position: absolute;
+  //     top: 50%;
+  //     left: 50%;
+  //     background: $white;
+  //     clip-path: polygon(25% 0, 100% 50%, 25% 100%);
+  //   }
+  // }
+
+  // .button__prev {
+  //   transform: translateX(-50%);
+  // }
+  // .button__prev::after {
+  //   transform: translate(-50%, -50%) scaleX(-1);
+  // }
+
+  // .button__next {
+  //   transform: translateX(50%);
+  // }
+
+  // .button__next::after {
+  //   transform: translate(-50%, -50%);
+  // }
+
+  .button__item {
     aspect-ratio: 1;
     border-radius: 50%;
-    
+    width: rem(50);
+    position: absolute;
+    background: $green;
+    top: 50%;
+
+    z-index: 4;
+    &::after {
+      aspect-ratio: 1;
+      width: rem(30);
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: $white;
+      clip-path: polygon(25% 0, 100% 50%, 25% 100%);
+    }
   }
-  
-  
-  
+
+  .button__prev {
+    top: 20%;
+    left: 36%;
+  }
+
+  .button__prev::after {
+    transform: translate(-50%, -50%) scaleX(-1);
+  }
+
+  .button__next::after {
+    transform: translate(-50%, -50%);
+  }
+
+  .button__next {
+    top: 20%;
+    right: 36%;
+  }
+
+  .button__prev {
+  }
+
+  .button__next {
+  }
+
+  .swiper-wrapper {
+  }
+
+  .swiper-slide {
+    width: rem(300);
+  }
+
+  //===================
 }
-
-

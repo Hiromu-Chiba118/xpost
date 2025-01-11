@@ -1,7 +1,7 @@
 @use "sass:math";
 
 // コンテンツのインナー幅（最も共通の幅が多い部分）
-$inner: 1400px;
+$inner: 300px;
 // ※キャンパス幅ではなくインナーの幅を指す
 
 // 余白
@@ -10,9 +10,7 @@ $padding-sp: 20px;
 // ※PC時：デザインカンプの余白の幅ではない。PC時は通常25pxで大丈夫！
 
 
-$base-font-family: "Zen Kaku Gothic Antique", sans-serif;
-$second-font-family: "Cormorant Garamond", serif;
-$third-font-family:"Cinzel", serif;
+$base-font-family: "Noto Sans JP", serif;
 // ※検証ツールでしっかり反映されているか確認する
 
 body {
@@ -27,6 +25,7 @@ $bold: 700;
 
 //色指定
 $black: #000;
+$baseColor: #111;
 $white: #fff;
 $green:#4e7660;
 $beige:#ddd6c7;
