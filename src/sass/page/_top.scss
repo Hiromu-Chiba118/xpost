@@ -91,52 +91,16 @@
     justify-content: space-between;
   }
 
-  // .button__item {
-  //   aspect-ratio: 1;
-  //   border-radius: 50%;
-  //   width: rem(50);
-  //   position: relative;
-  //   background: $green;
-  //   &::after {
-  //     aspect-ratio: 1;
-  //     width: rem(30);
-  //     content: '';
-  //     display: block;
-  //     position: absolute;
-  //     top: 50%;
-  //     left: 50%;
-  //     background: $white;
-  //     clip-path: polygon(25% 0, 100% 50%, 25% 100%);
-  //   }
-  // }
-
-  // .button__prev {
-  //   transform: translateX(-50%);
-  // }
-  // .button__prev::after {
-  //   transform: translate(-50%, -50%) scaleX(-1);
-  // }
-
-  // .button__next {
-  //   transform: translateX(50%);
-  // }
-
-  // .button__next::after {
-  //   transform: translate(-50%, -50%);
-  // }
-
   .button__item {
+    transition: 0.3s ease-in-out all;
     aspect-ratio: 1;
     border-radius: 50%;
     width: rem(50);
-    position: absolute;
+    position: relative;
     background: $green;
-    top: 50%;
-
-    z-index: 4;
     &::after {
       aspect-ratio: 1;
-      width: rem(30);
+      width: rem(25);
       content: '';
       display: block;
       position: absolute;
@@ -147,23 +111,27 @@
     }
   }
 
-  .button__prev {
-    top: 20%;
-    left: 36%;
+  @media (any-hover: hover) {
+    .button__item:hover{
+      filter: brightness(140%);
+    }
   }
 
+  .button__prev {
+    transform: translateX(-50%);
+  }
   .button__prev::after {
     transform: translate(-50%, -50%) scaleX(-1);
+  }
+
+  .button__next {
+    transform: translateX(50%);
   }
 
   .button__next::after {
     transform: translate(-50%, -50%);
   }
 
-  .button__next {
-    top: 20%;
-    right: 36%;
-  }
 
   .button__prev {
   }

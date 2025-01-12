@@ -288,19 +288,19 @@ html {
           justify-content: space-between;
 }
 .section .button__item {
+  -webkit-transition: 0.3s ease-in-out all;
+  transition: 0.3s ease-in-out all;
   aspect-ratio: 1;
   border-radius: 50%;
   width: 50px;
   width: 3.125rem;
-  position: absolute;
+  position: relative;
   background: #4e7660;
-  top: 50%;
-  z-index: 4;
 }
 .section .button__item::after {
   aspect-ratio: 1;
-  width: 30px;
-  width: 1.875rem;
+  width: 25px;
+  width: 1.5625rem;
   content: "";
   display: block;
   position: absolute;
@@ -310,21 +310,28 @@ html {
   -webkit-clip-path: polygon(25% 0, 100% 50%, 25% 100%);
           clip-path: polygon(25% 0, 100% 50%, 25% 100%);
 }
+@media (any-hover: hover) {
+  .section .button__item:hover {
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1.4" /><feFuncG type="linear" slope="1.4" /><feFuncB type="linear" slope="1.4" /></feComponentTransfer></filter></svg>#filter');
+    -webkit-filter: brightness(140%);
+            filter: brightness(140%);
+  }
+}
 .section .button__prev {
-  top: 20%;
-  left: 36%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 .section .button__prev::after {
   -webkit-transform: translate(-50%, -50%) scaleX(-1);
           transform: translate(-50%, -50%) scaleX(-1);
 }
+.section .button__next {
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
 .section .button__next::after {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-}
-.section .button__next {
-  top: 20%;
-  right: 36%;
 }
 .section .swiper-slide {
   width: 300px;
