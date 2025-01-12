@@ -72,6 +72,11 @@
     color: $baseColor;
   }
 
+
+
+
+
+
   //swiper ================
   .swiper {
     overflow: unset;
@@ -117,18 +122,18 @@
     }
   }
 
-  .button__prev {
+  .button-prev {
     transform: translateX(-50%);
   }
-  .button__prev::after {
+  .button-prev::after {
     transform: translate(-50%, -50%) scaleX(-1);
   }
 
-  .button__next {
+  .button-next {
     transform: translateX(50%);
   }
 
-  .button__next::after {
+  .button-next::after {
     transform: translate(-50%, -50%);
   }
 
