@@ -219,8 +219,22 @@ html {
 }
 
 .section {
-  overflow: hidden;
   background: rgba(221, 214, 199, .5);
+  overflow: hidden;
+}
+.section .section__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 50vh 0;
+}
+.section .section__texts {
+  width: 50%;
+  padding-right: 40px;
+  padding-right: 2.5rem;
 }
 .section .section__title {
   font-size: 50px;
@@ -228,9 +242,30 @@ html {
   letter-spacing: 0.1em;
   margin-bottom: 40px;
   margin-bottom: 2.5rem;
+  position: relative;
 }
-.section .section__container {
-  padding: 50vh 0;
+.section .section__text {
+  font-size: 18px;
+  font-size: 1.125rem;
+  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
+}
+.section .section__more {
+  border-radius: 6.25rem;
+  background: #4e7660;
+  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 16px;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  display: block;
+}
+.section .section__content {
+  width: 50%;
 }
 .section .card {
   border-radius: 0.375rem;
@@ -266,6 +301,8 @@ html {
 .section .swiper {
   overflow: unset;
   position: relative;
+  -webkit-clip-path: inset(0% -500% 0% 0%);
+          clip-path: inset(0% -500% 0% 0%);
 }
 .section .button {
   position: absolute;

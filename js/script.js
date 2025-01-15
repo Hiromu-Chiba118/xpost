@@ -6,9 +6,8 @@ const swiper = new Swiper('.swiper', {
   },
   spaceBetween: 40,
   slidesPerView: "auto",
-  centeredSlides: true,
-  loop: true,
   speed:300,
+  keyboard:true,
 });
 
 

@@ -25,19 +25,45 @@
 }
 
 .section {
-  overflow: hidden;
   background: rgba($color: $beige, $alpha: 0.5);
+  overflow: hidden;
+  .section__container {
+    display: flex;
+    align-items: center;
+    padding: 50vh 0;
+  }
+  
+  .section__texts {
+    width: 50%;
+    padding-right: rem(40) ;
+  }
+  
   .section__title {
     font-size: rem(50);
     letter-spacing: 0.1em;
     margin-bottom: rem(40);
+    position: relative;
   }
-
-  .section__container {
-    padding: 50vh 0;
+  
+  .section__text {
+    font-size: rem(18) ;
+    margin-bottom: rem(40) ;
   }
+  
+  .section__more {
+    border-radius: rem(100) ;
+    background: $green;
+    padding: rem(10) rem(20) ;
+    width: fit-content;
+    font-size: rem(16);
+    color:$white ;
+    text-align: center;
+    display: block;
+  }
+  
 
   .section__content {
+    width: 50%;
   }
 
   .card {
@@ -81,6 +107,7 @@
   .swiper {
     overflow: unset;
     position: relative;
+    clip-path: inset(0% -500% 0% 0%);
   }
 
   .button {
