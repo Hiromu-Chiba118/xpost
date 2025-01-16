@@ -4,7 +4,7 @@ const swiper = new Swiper('.swiper', {
     nextEl: '.button-next',
     prevEl: '.button-prev',
   },
-  spaceBetween: 40,
+  spaceBetween: 20,
   slidesPerView: "auto",
   speed:300,
   keyboard:true,
