@@ -21,6 +21,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
     <!-- css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/styles.css" />
@@ -32,139 +36,27 @@
     <script defer src="./js/script.js"></script>
   </head>
   <body>
-    <section class="top">
-      <div class="top__inner inner">
-        <div class="top__container">
-          <h1 class="top__title">片側はみだしスライダー<br>clip-pathの裏技</h1>
+    <div class="loader">
+      <div class="loader__lines">
+        <div class="loader__line"></div>
+        <div class="loader__line"></div>
+        <div class="loader__line"></div>
+        <div class="loader__line"></div>
+        <div class="loader__line"></div>
+        <div class="loader__line"></div>
+        <div class="loader__line"></div>
+      </div>
+      <div class="loader__straw">
+      </div>
+      <h1 class="loader__title"><span>orange</span></h1>
+    </div>
+    <div class="mv">
+      <!-- <h1 class="mv__title"><span>o</span><span>r</span><span>a</span><span>n</span><span>g</span><span>e</span></h1> -->
+      <div class="mv__inner">
+        <div class="mv__img">
+          <img src="./images/common/fv.jpg" alt="fv">
         </div>
       </div>
-    </section>
-    <section class="section">
-      <div class="section__inner inner">
-        <div class="section__container">
-          <div class="section__texts">
-            <h2 class="section__title">見本</h2>
-            <p class="section__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-            <a href="#" class="section__more">詳しく見る</a>
-          </div>
-          <div class="section__content">
-            <!-- ここからSwiper -->
-             <div class="swiper">
-               <div class="swiper-wrapper">
-                <div class="swiper-slide card">
-                  <div class="card__img">
-                    <img src="./images/common/img1.jpg" alt="" />
-                  </div>
-                  <div class="card__texts">
-                    <h3 class="card__title">タイトル</h3>
-                    <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                  </div>
-                </div>
-                <div class="swiper-slide card">
-                  <div class="card__img">
-                    <img src="./images/common/img2.jpg" alt="" />
-                  </div>
-                  <div class="card__texts">
-                    <h3 class="card__title">タイトル</h3>
-                    <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                  </div>
-                </div>
-                <div class="swiper-slide card">
-                  <div class="card__img">
-                    <img src="./images/common/img3.jpg" alt="" />
-                  </div>
-                  <div class="card__texts">
-                    <h3 class="card__title">タイトル</h3>
-                    <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                  </div>
-                </div>
-                <div class="swiper-slide card">
-                  <div class="card__img">
-                    <img src="./images/common/img4.jpg" alt="" />
-                  </div>
-                  <div class="card__texts">
-                    <h3 class="card__title">タイトル</h3>
-                    <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                  </div>
-                </div>
-                <div class="swiper-slide card">
-                  <div class="card__img">
-                    <img src="./images/common/img5.jpg" alt="" />
-                  </div>
-                  <div class="card__texts">
-                    <h3 class="card__title">タイトル</h3>
-                    <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                  </div>
-                </div>
-                <div class="swiper-slide card">
-                  <div class="card__img">
-                    <img src="./images/common/img1.jpg" alt="" />
-                  </div>
-                  <div class="card__texts">
-                    <h3 class="card__title">タイトル</h3>
-                    <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                  </div>
-                </div>
-                <div class="swiper-slide card">
-                  <div class="card__img">
-                    <img src="./images/common/img1.jpg" alt="" />
-                  </div>
-                  <div class="card__texts">
-                    <h3 class="card__title">タイトル</h3>
-                    <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                  </div>
-                </div>
-                <div class="swiper-slide card">
-                  <div class="card__img">
-                    <img src="./images/common/img2.jpg" alt="" />
-                  </div>
-                  <div class="card__texts">
-                    <h3 class="card__title">タイトル</h3>
-                    <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                  </div>
-                </div>
-                <div class="swiper-slide card">
-                  <div class="card__img">
-                    <img src="./images/common/img3.jpg" alt="" />
-                  </div>
-                  <div class="card__texts">
-                    <h3 class="card__title">タイトル</h3>
-                    <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                  </div>
-                </div>
-                <div class="swiper-slide card">
-                  <div class="card__img">
-                    <img src="./images/common/img4.jpg" alt="" />
-                  </div>
-                  <div class="card__texts">
-                    <h3 class="card__title">タイトル</h3>
-                    <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                  </div>
-                </div>
-                <div class="swiper-slide card">
-                  <div class="card__img">
-                    <img src="./images/common/img5.jpg" alt="" />
-                  </div>
-                  <div class="card__texts">
-                    <h3 class="card__title">タイトル</h3>
-                    <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                  </div>
-                </div>
-                <div class="swiper-slide card">
-                  <div class="card__img">
-                    <img src="./images/common/img1.jpg" alt="" />
-                  </div>
-                  <div class="card__texts">
-                    <h3 class="card__title">タイトル</h3>
-                    <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                  </div>
-                </div>
-               </div>
-             </div>
-            <!--　ここまでSwiper -->
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
   </body>
 </html>
