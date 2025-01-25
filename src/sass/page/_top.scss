@@ -19,6 +19,7 @@
 
 .test__car {
   width: rem(150);
+<<<<<<< Updated upstream
 }
 
 @keyframes car {
@@ -32,9 +33,34 @@
 
 .test__car{
   animation: car 2s linear forwards;
+=======
+  margin-bottom: rem(200);
 }
 
+.test__text {
+  font-size: rem(100);
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $en-font;
+  font-weight: $bold;
+  letter-spacing: 0.2em;
+  width: fit-content;
+>>>>>>> Stashed changes
+}
 
+@keyframes car {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(rem(300));
+  }
+}
+
+.test__car {
+  // animation: car 2s forwards ease-in-out;
+}
 
 // アニメーションプロパティ
 // animation-name
@@ -46,3 +72,19 @@
 // animation-play-state
 // animation-timeline
 // animation-timing-function
+<<<<<<< Updated upstream
+=======
+
+@keyframes text {
+  0% {
+    clip-path: inset(0% 100% 0% 0%);
+  }
+  100% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+.test__text {
+  animation: text 1s;
+}
+>>>>>>> Stashed changes
