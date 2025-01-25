@@ -178,26 +178,26 @@
 
 // ストローコロコロ
 .loader__straw {
-  animation: straw 2s linear ,hidden 0.8s linear forwards 3s;
+  animation: straw 2s cubic-bezier(0,.2,.15,1) ,hidden 0.8s linear forwards 3s;
   &::after {
-    animation: straw-label 2s linear forwards;
+    animation: straw-label 2s cubic-bezier(0,.2,.15,1) forwards;
   }
 }
 
 // タイトル出てくる
 .loader__title span {
-  animation: 0.7s title linear both 2s ,hidden 0.8s linear forwards 3s;
+  animation: 0.7s title cubic-bezier(0,.2,.15,1) both 2s ,hidden 0.8s linear forwards 3s;
 }
 
 // 帯が左右に消える
 .loader__line:nth-of-type(odd) {
-  animation: line1 1.1s forwards linear 3s;
+  animation: line1 1.1s forwards cubic-bezier(0,.72,1,.15) 3s;
 }
 .loader__line:nth-of-type(even) {
-  animation: line2 1.1s forwards linear 3s;
+  animation: line2 1.1s forwards cubic-bezier(0,.72,1,.15) 3s;
 }
 
 // 画像が小さく
 .mv__img img {
-  animation: img 2.3s both linear 3.5s;
+  animation: img 2.3s both cubic-bezier(.57,.01,.25,1) 3.2s;
 }
