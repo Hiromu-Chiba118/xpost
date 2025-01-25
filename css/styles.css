@@ -227,7 +227,7 @@ html {
 }
 
 .loader__line:nth-of-type(even) {
-  background: #F9E051;
+  background: #f9e051;
 }
 
 .loader__straw {
@@ -254,8 +254,8 @@ html {
   width: 100%;
   top: -3%;
   left: 0;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(1.875rem, #FE5836));
-  background: linear-gradient(white 0 1.875rem, #FE5836 1.875rem 3.75rem);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(1.875rem, #fe5836));
+  background: linear-gradient(white 0 1.875rem, #fe5836 1.875rem 3.75rem);
   background-repeat: repeat-y;
   background-size: 100% 3.75rem;
   -webkit-transform: skewY(-45deg);
@@ -270,8 +270,8 @@ html {
   inset: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#AEA18A), color-stop(30%, transparent), color-stop(80%, #AEA18A));
-  background: linear-gradient(90deg, #AEA18A 0% 10%, transparent 30% 50%, #AEA18A 80% 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#aea18a), color-stop(30%, transparent), color-stop(80%, #aea18a));
+  background: linear-gradient(90deg, #aea18a 0% 10%, transparent 30% 50%, #aea18a 80% 100%);
   opacity: 0.55;
   z-index: 2;
   mix-blend-mode: multiply;
