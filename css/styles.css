@@ -210,4 +210,30 @@ html {
   width: 150px;
   width: 9.375rem;
 }
+
+@-webkit-keyframes car {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(18.75rem);
+            transform: translateX(18.75rem);
+  }
+}
+
+@keyframes car {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(18.75rem);
+            transform: translateX(18.75rem);
+  }
+}
+.test__car {
+  -webkit-animation: car 2s linear forwards;
+          animation: car 2s linear forwards;
+}
 /*# sourceMappingURL=styles.css.map */

@@ -18,9 +18,21 @@
 }
 
 .test__car {
-  width: rem(150) ;
+  width: rem(150);
 }
 
+@keyframes car {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(rem(300));
+  }
+}
+
+.test__car{
+  animation: car 2s linear forwards;
+}
 
 
 
