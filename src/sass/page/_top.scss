@@ -1,6 +1,6 @@
 @use 'global' as *;
 
-body{
+body {
   background: black;
 }
 
@@ -17,9 +17,8 @@ body{
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: rem(100);
-  font-family: $en-font;
-  font-weight: $normal;
+  font-size: rem(70);
+  font-weight: $regular;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: $white;
@@ -32,35 +31,32 @@ body{
 
 .mv__scroll-text {
   text-align: center;
-  margin-bottom: rem(10);
   font-size: rem(20);
+  margin-bottom: rem(10);
   color: $white;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+}
+
+.mv__scroll-bar {
+  width: 2px;
+  height: rem(50);
+  background: $white;
+  margin-inline: auto;
 }
 
 @keyframes bar {
   0% {
     clip-path: inset(0% 0% 100% 0%);
   }
-  30% {
-    clip-path: inset(0% 0% 0% 0%);
-  }
   50% {
     clip-path: inset(0% 0% 0% 0%);
-  }
-  80% {
-    clip-path: inset(100% 0% 0% 0%);
   }
   100% {
     clip-path: inset(100% 0% 0% 0%);
   }
 }
 
-.mv__scroll-bar {
-  width: 2px;
-  height: rem(50);
-  margin-inline: auto;
-  background: $white;
-  animation: bar 2s ease-out infinite;
+
+.mv__scroll-bar{
+  animation: bar 2s ease-in-out infinite;
 }

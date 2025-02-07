@@ -208,10 +208,9 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  font-size: 100px;
-  font-size: 6.25rem;
-  font-family: "IBM Plex Mono", serif;
-  font-weight: 500;
+  font-size: 70px;
+  font-size: 4.375rem;
+  font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #fff;
@@ -225,13 +224,20 @@ body {
 
 .mv__scroll-text {
   text-align: center;
-  margin-bottom: 10px;
-  margin-bottom: 0.625rem;
   font-size: 20px;
   font-size: 1.25rem;
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+}
+
+.mv__scroll-bar {
+  width: 2px;
+  height: 50px;
+  height: 3.125rem;
+  background: #fff;
+  margin-inline: auto;
 }
 
 @-webkit-keyframes bar {
@@ -239,17 +245,9 @@ body {
     -webkit-clip-path: inset(0% 0% 100% 0%);
             clip-path: inset(0% 0% 100% 0%);
   }
-  30% {
-    -webkit-clip-path: inset(0% 0% 0% 0%);
-            clip-path: inset(0% 0% 0% 0%);
-  }
   50% {
     -webkit-clip-path: inset(0% 0% 0% 0%);
             clip-path: inset(0% 0% 0% 0%);
-  }
-  80% {
-    -webkit-clip-path: inset(100% 0% 0% 0%);
-            clip-path: inset(100% 0% 0% 0%);
   }
   100% {
     -webkit-clip-path: inset(100% 0% 0% 0%);
@@ -262,17 +260,9 @@ body {
     -webkit-clip-path: inset(0% 0% 100% 0%);
             clip-path: inset(0% 0% 100% 0%);
   }
-  30% {
-    -webkit-clip-path: inset(0% 0% 0% 0%);
-            clip-path: inset(0% 0% 0% 0%);
-  }
   50% {
     -webkit-clip-path: inset(0% 0% 0% 0%);
             clip-path: inset(0% 0% 0% 0%);
-  }
-  80% {
-    -webkit-clip-path: inset(100% 0% 0% 0%);
-            clip-path: inset(100% 0% 0% 0%);
   }
   100% {
     -webkit-clip-path: inset(100% 0% 0% 0%);
@@ -280,12 +270,7 @@ body {
   }
 }
 .mv__scroll-bar {
-  width: 2px;
-  height: 50px;
-  height: 3.125rem;
-  margin-inline: auto;
-  background: #fff;
-  -webkit-animation: bar 2s ease-out infinite;
-          animation: bar 2s ease-out infinite;
+  -webkit-animation: bar 2s ease-in-out infinite;
+          animation: bar 2s ease-in-out infinite;
 }
 /*# sourceMappingURL=styles.css.map */
