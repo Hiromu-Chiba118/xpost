@@ -1,62 +1,28 @@
 @use 'global' as *;
-
-body {
-  background: black;
-}
-
-.mv {
-  position: relative;
-}
-.mv__img {
+.section {
   height: 100vh;
-  width: 100%;
-}
-
-.mv__text {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: rem(70);
-  font-weight: $regular;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: $white;
-  text-align: center;
-}
-
-.mv__scroll {
-  transform: translateY(-100%);
-}
-
-.mv__scroll-text {
-  text-align: center;
-  font-size: rem(20);
-  margin-bottom: rem(10);
-  color: $white;
-  text-transform: uppercase;
-}
-
-.mv__scroll-bar {
-  width: 2px;
-  height: rem(50);
-  background: $white;
-  margin-inline: auto;
-}
-
-@keyframes bar {
-  0% {
-    clip-path: inset(0% 0% 100% 0%);
-  }
-  50% {
-    clip-path: inset(0% 0% 0% 0%);
-  }
-  100% {
-    clip-path: inset(100% 0% 0% 0%);
+  overflow: auto;
+  display: grid;
+  place-content: center;
+  p{
+    font-size: rem(30) ;
+    color: #FFF;
   }
 }
 
-
-.mv__scroll-bar{
-  animation: bar 2s ease-in-out infinite;
+.section:nth-of-type(1){
+  background: #000;
 }
+.section:nth-of-type(2){
+  background: red;
+
+}
+.section:nth-of-type(3){
+  background: blue;
+
+}
+
+.vh200 {
+  height: 200vh;
+}
+
