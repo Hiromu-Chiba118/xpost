@@ -233,6 +233,36 @@ html {
   margin-top: -2.5rem;
 }
 
+.test__inner {
+  max-width: 1200px;
+  max-width: 75rem;
+  padding: 0 25px;
+  margin-inline: auto;
+}
+@media screen and (max-width: 767px) {
+  .test__inner {
+    max-width: 37.5rem;
+    padding: 0 20px;
+  }
+}
+
+.test__container {
+  margin: 20vh 0;
+}
+
+.test__title {
+  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
+  font-size: 30px;
+  font-size: 1.875rem;
+  letter-spacing: 0.05em;
+}
+
+.test__img {
+  width: 300px;
+  width: 18.75rem;
+}
+
 .gallery {
   position: relative;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(191, 177, 152, .725)), to(rgb(156, 155, 142)));

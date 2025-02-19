@@ -1,0 +1,29 @@
+@use 'global' as *;
+
+.test {
+}
+
+.test__inner {
+  max-width: rem(1200);
+  padding: 0 $padding-pc;
+  margin-inline: auto;
+  @include mq {
+    max-width: rem(600);
+    padding: 0 $padding-sp;
+  }
+}
+
+.test__container {
+  margin: 20vh 0;
+}
+
+.test__title {
+margin-bottom: rem(30) ;
+font-size: rem(30) ;
+letter-spacing: 0.05em;
+}
+
+.test__img {
+  width: rem(300) ;
+}
+
