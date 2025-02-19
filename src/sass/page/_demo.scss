@@ -1,0 +1,41 @@
+@use 'global' as *;
+
+
+.animal {
+  background: rgb(212, 237, 212);
+}
+
+.animal__inner {
+  max-width: rem(1300);
+  padding: 0 $padding-pc;
+  margin-inline: auto;
+  @include mq {
+    max-width: rem(600);
+    padding: 0 $padding-sp;
+  }
+}
+
+.animal__container {
+  padding: 100vh 0;
+}
+
+.animal__items {
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  gap:rem(10) ;
+}
+
+.animal__item {
+  aspect-ratio: 2/3;
+  overflow: hidden;
+}
+.animal__item img{
+  height: calc(100% + rem(150) );
+  object-position: center;
+}
+
+.animal__item:nth-of-type(odd){
+  margin-top: rem(-40) ;
+}
+
+

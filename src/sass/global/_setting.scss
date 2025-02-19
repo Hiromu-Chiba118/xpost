@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 
 // コンテンツのインナー幅（最も共通の幅が多い部分）
 $inner: 300px;
@@ -9,10 +9,9 @@ $padding-pc: 25px;
 $padding-sp: 20px;
 // ※PC時：デザインカンプの余白の幅ではない。PC時は通常25pxで大丈夫！
 
-
-$base-font-family: "Noto Sans JP", serif;
-$en-font: "IBM Plex Mono", serif;
-$third-font: "Montserrat", serif;
+$base-font-family: 'Noto Sans JP', serif;
+$en-font: 'IBM Plex Mono', serif;
+$third-font: 'Montserrat', serif;
 // ※検証ツールでしっかり反映されているか確認する
 
 body {
@@ -20,22 +19,19 @@ body {
 }
 
 // フォントウェイト
+$light: 400;
 $regular: 400;
 $normal: 500;
 $bold: 700;
-
 
 //色指定
 $black: #000;
 $baseColor: #111;
 $white: #fff;
-$green:#4e7660;
-$beige:#ddd6c7;
-$beige2:#e9e7e0;
-$brown:#554c3c;
-
-
-
+$green: #4e7660;
+$beige: #ddd6c7;
+$beige2: #e9e7e0;
+$brown: #554c3c;
 
 ////////////////////
 // メディアクエリとブレークポイントの設定
@@ -45,7 +41,6 @@ $brown:#554c3c;
 $breakpoints: (
   md: 767,
 );
-
 
 //メディアクエリー
 $mediaquerys: (
@@ -64,6 +59,22 @@ $mediaquerys: (
   @return math.div($pixels, 16) * 1rem;
 }
 
+// vwへの変換
+@function fvw($pixels) {
+  @return math.div($pixels, 1280) * 100vw;
+}
+@function sfvw($pixels) {
+  @return math.div($pixels, 375) * 100vw;
+}
+
+// vhへの変換
+@function vh($pixels) {
+  @return math.div($pixels, 800) * 100vh;
+}
+// spの時
+@function spvh($pixels) {
+  @return math.div($pixels, 650) * 100vh;
+}
 
 ////////////////////
 // 非表示設定
@@ -71,14 +82,13 @@ $mediaquerys: (
 
 //spのみ表示
 @media only screen and (min-width: 768px) {
-	.sp {
-		display: none !important;
-	}
+  .sp {
+    display: none !important;
+  }
 }
 
 @media only screen and (max-width: 767px) {
-	.pc {
-		display: none !important;
-	}
+  .pc {
+    display: none !important;
+  }
 }
-
