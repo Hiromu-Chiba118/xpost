@@ -1,1 +1,44 @@
 @use 'global' as *;
+
+body{
+    background: black;
+}
+.section {
+    background: linear-gradient(gray 0 65% , black 65% 100%);
+}
+
+.section__inner {
+    max-width: rem(1250);
+    padding: 0 $padding-pc;
+    margin-inline: auto;
+    @include mq {
+        max-width: rem(600);
+        padding: 0 $padding-sp;
+    }
+}
+
+.section__container {
+    padding: rem(100) 0;
+}
+
+.section__imgs {
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap: rem(30) ;
+}
+
+.section__img {
+    aspect-ratio: 2/3;
+    overflow: hidden;
+    cursor: pointer;
+}
+.section__img img{
+    transform: scale(1.05);
+    transition: 0.6s cubic-bezier(.52,.01,.41,1.01) all;
+}
+
+@media (any-hover: hover) {
+    .section__img img:hover{
+    transform: scale(1);
+    }
+}
