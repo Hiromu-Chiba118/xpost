@@ -14,7 +14,7 @@
 }
 
 .test__container {
-  margin: 20vh 0;
+  padding: 100vh 0;
 }
 
 .test__title {
@@ -25,5 +25,22 @@ letter-spacing: 0.05em;
 
 .test__img {
   width: rem(300) ;
+  height: rem(300) ;
+  overflow: hidden;
+}
+
+
+.test__img img{
+  // 350px
+  height: calc(100% + rem(50) );
+}
+
+
+
+
+.test__imgs {
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  gap: rem(10) ;
 }
 

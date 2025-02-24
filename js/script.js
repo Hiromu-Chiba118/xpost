@@ -95,3 +95,38 @@ parallaxes4.forEach((parallax) => {
      }
    );
  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+// キリンを動かす
+gsap.fromTo(
+  // ターゲット
+  '.test__img img',
+  // 最初の状態
+  {
+    y: -50,
+  },
+  // 最後の状態
+  {
+    y: 0,
+    scrollTrigger: {
+      trigger: '.test__img img',
+      //    　要素の　　画面の
+      start: 'top bottom',
+      end:"bottom top ",
+
+      // スクロール動機
+      scrub:1,
+    },
+  }
+);

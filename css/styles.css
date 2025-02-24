@@ -247,7 +247,7 @@ html {
 }
 
 .test__container {
-  margin: 20vh 0;
+  padding: 100vh 0;
 }
 
 .test__title {
@@ -261,6 +261,20 @@ html {
 .test__img {
   width: 300px;
   width: 18.75rem;
+  height: 300px;
+  height: 18.75rem;
+  overflow: hidden;
+}
+
+.test__img img {
+  height: calc(100% + 3.125rem);
+}
+
+.test__imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  gap: 0.625rem;
 }
 
 .gallery {
