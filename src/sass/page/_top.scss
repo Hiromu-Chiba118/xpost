@@ -1,233 +1,41 @@
 @use 'global' as *;
-.section {
-  margin: rem(200) 0;
+
+.cover {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, #000, brown);
 }
-@keyframes list {
+
+.mv {
+  height: 100vh;
+}
+
+// 幕が切り取られる＆角丸になる
+@keyframes clip {
   0% {
-    opacity: 0;
-    transform: translateX(10px);
+    clip-path: inset(0% 0% 0% 0% round 0px);
   }
   100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-.news__list {
-  opacity: 0;
-  margin-top: -1px;
-  padding: rem(27) 0;
-  border: 1px solid;
-  border-color: $gray transparent $gray transparent;
-  transition: 0.3s ease-in-out all;
-  display: flex;
-  align-items: center;
-  gap: rem(20);
-  @include mq {
-    display: block;
-    padding: rem(12);
-  }
-}
-.news__list:nth-of-type(1) {
-  animation: list 0.7s ease-in-out forwards 0.9s;
-}
-.news__list:nth-of-type(2) {
-  animation: list 0.7s ease-in-out forwards 1.05s;
-}
-.news__list:nth-of-type(3) {
-  animation: list 0.7s ease-in-out forwards 1.2s;
-}
-
-.news__list-info {
-  gap: rem(15);
-  @include mq {
-    margin-bottom: rem(8);
+    clip-path: inset(20px 20px 20px 20px round 20px);
   }
 }
 
-.item-info {
-  display: flex;
-  align-items: center;
-  gap: rem(10);
+.cover {
+  animation: clip 1s cubic-bezier(0, 0.76, 0.31, 1) forwards, 
+  totop 1s cubic-bezier(0.75, 0.02, 0.19, 1) forwards 1s;
 }
 
-.item-info__date {
-  transition: 0.3s ease-in-out all;
-  font-size: rem(14);
-  font-weight: $bold;
-  line-height: calc(26 / 14);
-  @include mq {
-    font-size: rem(12);
-  }
-}
-
-.item-info__cate {
-  transition: 0.3s ease-in-out all;
-  padding: rem(1) rem(7);
-  text-align: center;
-  width: fit-content;
-  border: 1px solid $blue;
-  background: $blue;
-  color: $white;
-  font-size: rem(12);
-  color: $white;
-  line-height: 1.4;
-  @include mq {
-    font-size: rem(10);
-  }
-}
-
-.news__list-title {
-  width: 50%;
-  flex-grow: 1;
-  transition: 0.3s ease-in-out all;
-  font-size: rem(14);
-  font-weight: $regular;
-  line-height: calc(20 / 14);
-  word-break: break-all;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  @include mq {
-    width: 100%;
-    font-size: rem(12);
-    line-height: calc(18 / 12);
-    -webkit-line-clamp: 2;
-  }
-}
-
-.title {
-  margin-bottom: rem(60);
-  position: relative;
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: rem(-33);
-    height: rem(205);
-    width: 2px;
-    background: $red;
-    transform-origin: bottom;
-    transform: rotate(45deg);
-    z-index: 1;
-    @include mq {
-      bottom: rem(-10);
-      height: rem(115);
-      transform: rotate(49deg);
-    }
-  }
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: rem(40);
-    translate: 0 -50%;
-    background: radial-gradient(transparent 0% calc(100% - rem(22)), $red calc(100% - rem(22)) 100%);
-    border-radius: 50%;
-    width: rem(100);
-    aspect-ratio: 1;
-  }
-  span {
-    display: inline-block;
-  }
-}
-
-.title__main {
-  font-size: rem(18);
-  font-weight: $bold;
-  line-height: calc(24 / 18);
-  position: relative;
-  z-index: 2;
-  margin-bottom: rem(10);
-  @include mq {
-    font-size: rem(14);
-    margin-bottom: rem(5);
-  }
-}
-
-.title__en {
-  font-size: rem(80);
-  line-height: 1;
-  font-weight: $heavy;
-  letter-spacing: 0;
-  position: relative;
-  z-index: 2;
-  @include mq {
-    font-size: rem(44);
-  }
-}
-
-@keyframes mainTitle {
+// 幕が上に上がってバイバイ
+@keyframes totop {
   0% {
-    transform: translateY(100%);
+    transform: translateY(0);
   }
   100% {
-    transform: translateY(0%);
-  }
-}
-@keyframes titleLine {
-  0% {
-    clip-path: inset(0% 0% 100% 0%);
-  }
-  50% {
-    clip-path: inset(0% 0% 0% 0%);
-  }
-  100% {
-    clip-path: inset(100% 0% 0% 0%);
-  }
-}
-@keyframes english {
-  0% {
-    transform: translate(rem(5), rem(-5));
-    opacity: 0;
-  }
-  100% {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-}
-@keyframes circle {
-  0% {
-    transform: scale(0.2);
-    opacity: 1;
-  }
-  20% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1.2);
-    opacity: 0;
-  }
-}
-.js-title {
-  opacity: 0;
-  .title__main {
-    overflow: hidden;
-  }
-  &::before {
-    opacity: 0;
-  }
-  .title__en span {
-    opacity: 0;
-  }
-}
-.js-title {
-  opacity: 1;
-  .title__main span {
-    animation: mainTitle 0.7s cubic-bezier(0.13, 0.66, 0.17, 1) forwards;
-  }
-  &::after {
-    animation: titleLine 1s cubic-bezier(0.73, 0.01, 0.13, 1) forwards;
-  }
-  &::before {
-    animation: circle 1s cubic-bezier(0, 0.61, 0.1, 1) forwards 0.2s;
-  }
-  .title__en span:nth-of-type(odd) {
-    animation: english 0.6s ease-in-out forwards 0.5s;
-  }
-  .title__en span:nth-of-type(even) {
-    animation: english 0.6s ease-in-out forwards 0.65s;
+    transform: translateY(-100%);
   }
 }
