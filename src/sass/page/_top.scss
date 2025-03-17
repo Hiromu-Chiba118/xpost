@@ -1,41 +1,89 @@
 @use 'global' as *;
 
-.cover {
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  right: 0;
-  left: 0;
+.section {
+  overflow: hidden;
+  position: relative;
+}
+
+.section__img {
   width: 100%;
+  position: relative;
+  z-index: 1;
   height: 100vh;
-  background: linear-gradient(45deg, #000, brown);
+  overflow: hidden;
 }
 
-.mv {
-  height: 100vh;
+.section__inner {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  height: 100%;
+  max-width: rem(1100);
+  padding: rem(100) rem(50);
+  margin-inline: auto;
+  width: 100%;
+  @include mq {
+    max-width: rem(600);
+    padding: 0 $padding-sp;
+  }
 }
 
-// 幕が切り取られる＆角丸になる
-@keyframes clip {
+.section__osiro {
+  position: absolute;
+  top: rem(80);
+  right: rem(-30);
+  width: rem(610);
+  z-index: 1;
+}
+
+@keyframes blur {
   0% {
-    clip-path: inset(0% 0% 0% 0% round 0px);
+    opacity: 0;
+    filter: blur(20px);
   }
   100% {
-    clip-path: inset(20px 20px 20px 20px round 20px);
+    opacity: 1;
+    filter: blur(0px);
   }
 }
 
-.cover {
-  animation: clip 1s cubic-bezier(0, 0.76, 0.31, 1) forwards, 
-  totop 1s cubic-bezier(0.75, 0.02, 0.19, 1) forwards 1s;
+.section__title {
+  animation: blur 1s ease-in-out forwards 1s;
 }
 
-// 幕が上に上がってバイバイ
-@keyframes totop {
+@keyframes hana {
   0% {
-    transform: translateY(0);
+    transform: translateX(rem(0)) scale(1.1);
   }
   100% {
-    transform: translateY(-100%);
+    transform: translateX(rem(-90)) scale(1.34);
+    filter: blur(14px);
   }
+}
+
+
+.section__img img{
+  object-position: top;
+}
+.section__img {
+  transform:translateX(rem(0)) scale(1.1);
+  animation: hana 3.4s cubic-bezier(0.52, 0.02, 0.3, 1) forwards 0.6s;
+}
+
+@keyframes osiro {
+  0% {
+    filter: blur(8px);
+    transform: translateX(rem(-12)) scale(0.91);
+  }
+  100% {
+    filter: blur(0px);
+    transform: translateX(rem(0)) scale(0.95);
+  }
+}
+
+.section__osiro {
+  filter: blur(8px);
+  transform: translateX(rem(-12))  scale(0.91);
+  animation: osiro 4s cubic-bezier(0.52, 0.02, 0.3, 1) forwards 0.7s;
 }
