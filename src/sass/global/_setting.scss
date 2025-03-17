@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 
 // コンテンツのインナー幅（最も共通の幅が多い部分）
 $inner: 300px;
@@ -9,11 +9,10 @@ $padding-pc: 25px;
 $padding-sp: 20px;
 // ※PC時：デザインカンプの余白の幅ではない。PC時は通常25pxで大丈夫！
 
-
-$base-font-family: "Noto Sans JP", serif;
-$en-font: "IBM Plex Mono", serif;
-$third-font: "Montserrat", serif;
-$fourth-font: "EB Garamond", serif;
+$base-font-family: 'Noto Sans JP', serif;
+$en-font: 'IBM Plex Mono', serif;
+$third-font: 'Montserrat', serif;
+$fourth-font: 'EB Garamond', serif;
 // ※検証ツールでしっかり反映されているか確認する
 
 body {
@@ -21,22 +20,24 @@ body {
 }
 
 // フォントウェイト
-$regular: 400;
-$normal: 500;
+$regular: 300;
+$normal: 400;
 $bold: 700;
+$heavy: 900;
 
+////////////////////
+// 色の指定
+////////////////////
 
-//色指定
-$black: #000;
-$baseColor: #111;
+//色指定（共通性のあるものは出来る限り指定すると良い）
+$base-color: #333333;
+$black: #111;
+$gray: #cccccc;
+$gray2: #f7f7f7;
+$gray3: #707070;
 $white: #fff;
-$green:#4e7660;
-$beige:#ddd6c7;
-$beige2:#e9e7e0;
-$brown:#554c3c;
-
-
-
+$blue: #003c7e;
+$red: #d31300;
 
 ////////////////////
 // メディアクエリとブレークポイントの設定
@@ -46,7 +47,6 @@ $brown:#554c3c;
 $breakpoints: (
   md: 767,
 );
-
 
 //メディアクエリー
 $mediaquerys: (
@@ -65,21 +65,19 @@ $mediaquerys: (
   @return math.div($pixels, 16) * 1rem;
 }
 
-
 ////////////////////
 // 非表示設定
 ////////////////////
 
 //spのみ表示
 @media only screen and (min-width: 768px) {
-	.sp {
-		display: none !important;
-	}
+  .sp {
+    display: none !important;
+  }
 }
 
 @media only screen and (max-width: 767px) {
-	.pc {
-		display: none !important;
-	}
+  .pc {
+    display: none !important;
+  }
 }
-
