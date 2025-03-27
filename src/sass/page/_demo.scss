@@ -1,0 +1,124 @@
+@use 'global' as *;
+
+//loader ================
+.loader {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index:100;
+    top: 0;
+    right: 0;
+    left: 0;
+    overscroll-behavior: none;
+    scrollbar-width: none;
+    background: $blue;
+    overflow: auto;
+}
+
+.loader__inner {
+    position: relative;
+    height: calc(100% + 1px);
+    width: 100%;
+}
+
+.loader__cover {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns:1fr;
+    span:nth-of-type(1){
+        transform-origin:left bottom;
+        transform: scaleX(2) skewX(45deg);
+    }
+    span:nth-of-type(2){
+        transform-origin:left top;
+        transform: scaleX(2) skewX(-45deg);
+    }
+}
+
+.loader__cover:nth-of-type(1) {
+    z-index: 3;
+    span{
+        background: $blue;
+    }
+    --percent1:0%;
+    span:nth-of-type(1){
+        border-radius: 0 0 0 var(--percent1) ;        
+    }
+    span:nth-of-type(2){
+        border-radius: var(--percent1) 0  0 0;
+    }
+}
+.loader__cover:nth-of-type(2) {
+    z-index: 2;
+    span{
+        background: rgb(27, 177, 237);
+    }
+    --percent2:0%;
+    span:nth-of-type(1){
+        border-radius: 0 0 0 var(--percent2) ;        
+    }
+    span:nth-of-type(2){
+        border-radius: var(--percent2) 0  0 0;
+    }
+}
+.loader__cover:nth-of-type(3) {
+    z-index: 1;
+    span{
+        background: rgb(177, 225, 244);
+    }
+    --percent3:0%;
+    span:nth-of-type(1){
+        border-radius: 0 0 0 var(--percent3) ;        
+    }
+    span:nth-of-type(2){
+        border-radius: var(--percent3) 0  0 0;
+    }
+}
+
+.loader__logo {
+    position: absolute;
+    top:50%;
+    left:50%;
+    translate: -50% -50%;
+    width: rem(260) ;
+    aspect-ratio: 260/54;
+    z-index: 5;
+    opacity: 0;
+    @include mq{
+        width: rem(140) ;
+    }
+}
+
+.loader__logo img{
+    object-fit: contain;
+}
+
+.loader__ship {
+    position: absolute;
+    top:50%;
+    left:50%;
+    translate: -50% -50%;
+    width: rem(95) ;
+    aspect-ratio: 95/36;
+    z-index: 5;
+    @include mq{
+        width: rem(40) ;
+    }
+}
+
+.loader__ship img{
+    object-fit: contain;
+}
+
+
+
+
+.mv {
+    img{
+        height: 100vh;
+    }
+}
+
