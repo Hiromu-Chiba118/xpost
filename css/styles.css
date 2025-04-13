@@ -244,35 +244,16 @@ html {
   }
 }
 
-.test__title {
-  margin-bottom: 50px;
-  margin-bottom: 3.125rem;
-  font-family: "Zen Maru Gothic", serif;
-  letter-spacing: 0.1em;
-  font-weight: 700;
-  font-size: 40px;
-  font-size: 2.5rem;
-}
-
-.test__title span {
-  display: inline-block;
-}
-
-.test__text {
-  font-size: 22px;
-  font-size: 1.375rem;
-  line-height: 2;
-  font-family: "Zen Maru Gothic", serif;
-}
-
-.test__imgs {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-  gap: 1.25rem;
-}
-
-.test__img img {
-  border-radius: 0.625rem;
+.test__arrow {
+  aspect-ratio: 1;
+  width: 30px;
+  width: 1.875rem;
+  -webkit-mask-image: url("../images/common/arrow.svg");
+          mask-image: url("../images/common/arrow.svg");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  background-color: pink;
 }
 /*# sourceMappingURL=styles.css.map */

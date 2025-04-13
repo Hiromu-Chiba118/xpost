@@ -17,33 +17,14 @@
 .test__container {
 }
 
-.test__title {
-  margin-bottom: rem(50);
-  font-family: $fifth-font-family;
-  letter-spacing: 0.1em;
-  font-weight: $bold;
-  font-size: rem(40);
-}
+.test__arrow {
+  aspect-ratio: 1;
+  width: rem(30);
+  // 指定した形に切り取る
+  mask-image: url('../images/common/arrow.svg');
+  mask-repeat: no-repeat;
+  mask-size: contain;
 
-.test__title span {
-  display: inline-block;
-}
-
-.test__text {
-  font-size: rem(22);
-  line-height: 2;
-  font-family: $fifth-font-family;
-}
-
-.test__imgs {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: rem(20);
-}
-
-.test__img {
-}
-
-.test__img img {
-  border-radius: rem(10);
+  // ここを変えるだけで七変化します
+  background-color: pink;
 }
