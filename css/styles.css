@@ -227,66 +227,52 @@ html {
   text-transform: uppercase;
 }
 
-.cover {
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(45deg, #000, brown);
+.test {
+  padding: 50vh 0;
 }
 
-.mv {
-  height: 100vh;
+.test__inner {
+  max-width: 1200px;
+  max-width: 75rem;
+  padding: 0 25px;
+  margin-inline: auto;
 }
-
-@-webkit-keyframes clip {
-  0% {
-    -webkit-clip-path: inset(0% 0% 0% 0% round 0px);
-            clip-path: inset(0% 0% 0% 0% round 0px);
-  }
-  100% {
-    -webkit-clip-path: inset(20px 20px 20px 20px round 20px);
-            clip-path: inset(20px 20px 20px 20px round 20px);
+@media screen and (max-width: 767px) {
+  .test__inner {
+    max-width: 37.5rem;
+    padding: 0 20px;
   }
 }
 
-@keyframes clip {
-  0% {
-    -webkit-clip-path: inset(0% 0% 0% 0% round 0px);
-            clip-path: inset(0% 0% 0% 0% round 0px);
-  }
-  100% {
-    -webkit-clip-path: inset(20px 20px 20px 20px round 20px);
-            clip-path: inset(20px 20px 20px 20px round 20px);
-  }
-}
-.cover {
-  -webkit-animation: clip 1s cubic-bezier(0, 0.76, 0.31, 1) forwards, totop 1s cubic-bezier(0.75, 0.02, 0.19, 1) forwards 1s;
-          animation: clip 1s cubic-bezier(0, 0.76, 0.31, 1) forwards, totop 1s cubic-bezier(0.75, 0.02, 0.19, 1) forwards 1s;
+.test__title {
+  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
+  font-family: "Zen Maru Gothic", serif;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-size: 40px;
+  font-size: 2.5rem;
 }
 
-@-webkit-keyframes totop {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
-  }
+.test__title span {
+  display: inline-block;
 }
 
-@keyframes totop {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
-  }
+.test__text {
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 2;
+  font-family: "Zen Maru Gothic", serif;
+}
+
+.test__imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  gap: 1.25rem;
+}
+
+.test__img img {
+  border-radius: 0.625rem;
 }
 /*# sourceMappingURL=styles.css.map */
