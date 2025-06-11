@@ -1,30 +1,36 @@
 @use 'global' as *;
 
-.test {
-  padding: 50vh 0;
+.mv {
 }
 
-.test__inner {
-  max-width: rem(1200);
-  padding: 0 $padding-pc;
-  margin-inline: auto;
-  @include mq {
-    max-width: rem(600);
-    padding: 0 $padding-sp;
-  }
+.mv__img {
+  height: 100vh;
 }
 
-.test__container {
+.loader {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, #000, brown);
 }
 
-.test__arrow {
-  aspect-ratio: 1;
-  width: rem(30);
-  // 指定した形に切り取る
-  mask-image: url('../images/common/arrow.svg');
-  mask-repeat: no-repeat;
-  mask-size: contain;
+.loader__text {
+  overflow: hidden;
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-  // ここを変えるだけで七変化します
-  background-color: pink;
+.loader__text span {
+  display: block;
+  font-size: rem(20);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  
 }
