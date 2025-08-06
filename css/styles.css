@@ -319,6 +319,104 @@ html {
   height: 100vh;
 }
 
+.news__lists {
+  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
+}
+
+.news__button {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  position: relative;
+  display: block;
+  padding: 14px;
+  padding: 0.875rem;
+  min-width: 200px;
+  min-width: 12.5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  border: 1px solid #003c7e;
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #003c7e;
+  text-align: center;
+  -webkit-transition: 0.3s ease-out all;
+  transition: 0.3s ease-out all;
+}
+.news__button span {
+  position: relative;
+  z-index: 3;
+}
+.news__button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #003c7e;
+  z-index: 1;
+  -webkit-clip-path: inset(0% 100% 0% 0%);
+          clip-path: inset(0% 100% 0% 0%);
+  -webkit-transition: 0.3s ease-out all;
+  transition: 0.3s ease-out all;
+}
+
+@media (any-hover: hover) {
+  .news__button:hover {
+    color: #fff;
+  }
+  .news__button:hover::after {
+    -webkit-clip-path: inset(0% 0% 0% 0%);
+            clip-path: inset(0% 0% 0% 0%);
+  }
+}
+.news__button2 {
+  position: relative;
+  display: block;
+  padding: 14px;
+  padding: 0.875rem;
+  min-width: 200px;
+  min-width: 12.5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  border: 1px solid #003c7e;
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #003c7e;
+  text-align: center;
+  overflow: hidden;
+  -webkit-transition: 0.3s ease-out all;
+  transition: 0.3s ease-out all;
+  --x: -100%;
+}
+.news__button2 span {
+  position: relative;
+  z-index: 3;
+}
+.news__button2::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background: #003c7e;
+  z-index: 1;
+  -webkit-transform: translateX(var(--x));
+          transform: translateX(var(--x));
+}
+
+@media (any-hover: hover) {
+  .news__button2:hover {
+    color: #fff;
+  }
+}
 .news__list {
   opacity: 0;
   margin-top: -1px;
